@@ -1,14 +1,85 @@
 <template>
     <Experiment title="Study on problem solving">
       <InstructionScreen :title="'Welcome'">
-        In this study, you are asked to come up with a method to solve a problem.
+        Herzlich willkommen und vielen Dank, dass Sie an dieser Studie teilnehmen!
   
         <br>
   
-        Concretely, you will first have to read a background scenario. 
-        Please read it very carefully. 
-        Afterwards, you will be asked to come up with a potential solution to the problem described in said scenario. 
-        Finally, you will be asked to rate the reliability of the text describing the background scenario.
+        Im Folgenden werden Ihnen kurze Dialoge präsentiert. 
+        Die Aussage des Sprechers A dient lediglich dazu, Ihnen den Kontext des Gesprächs verständlich zu machen.
+        Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt.
+        Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache. 
+        Sie können auf einer Skala von 1 (völlig akzeptable) bis 7 (völlig inakzeptabel) bewerten, wie akzeptable Sie die präsentierten Aussagen der Sprecherin B finden. 
+
+        Das Bearbeiten des Fragebogens wird etwa 5 Minuten in Anspruch nehmen.
+
+        Hinweise zur Freiwilligkeit und Datenschutz:
+        Ihre Angaben werden vertraulich behandelt.
+        Die Auswertungen erfolgen in Übereinstimmung mit den bestehenden Datenschutzgesetzen vollkommen anonym. 
+        Die Daten werden dabei so gespeichert, dass jede Rückverfolgung zu persönlichen Informationen ausgeschlossen ist. 
+        Mit Abschluss der Studie stimmen Sie zu, dass Ihre Daten in anonymisierter Form zu Forschungszwecken verwendet werden dürfen.
+        Die Teilnahme an der Studie ist freiwillig. Sie können jederzeit und ohne Angabe von Gründen die Teilnahme an dieser Studie beenden, ohne dass Ihnen daraus Nachteile entstehen. 
+      
+         
+        
+      </InstructionScreen>
+
+      <InstructionScreen :title="'Einführung 1/3'">
+        Hinweise zur Bewertungsskala
+  
+        <br>
+  
+        Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren wir Ihnen drei Beispiele. 
+        Bitte lesen Sie das erste Beispiel durch: 
+
+        (1) A: was mag Peter?
+            B: Peter mag Ingwer.
+
+            Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte sehr wahrscheinlich so in der gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen. 
+            Daher wäre eine solche Aussage mit 1 (völlig akzeptabel) zu bewerten.       
+      
+         
+        
+      </InstructionScreen>
+
+      <InstructionScreen :title="'Einführung 2/3'">
+        Hinweise zur Bewertungsskala
+  
+        <br>
+  
+        Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren wir Ihnen drei Beispiele. 
+        Bitte lesen Sie das zweite Beispiel durch: 
+
+        (2) A: Was hat Peter gestern gemacht?
+            B: Vater Fußball gestern.
+
+        Da diese Aussage von B nicht den Regeln des Deutschen entspricht und sehr unwahrscheinlich so in der gesprochenen Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin vorkommen würde, wäre eine solche Aussage mit 7, d. h. völlig inakzeptabel, zu bewerten.
+
+
+      
+         
+        
+      </InstructionScreen>
+
+      <InstructionScreen :title="'Einführung 3/3'">
+        Hinweise zur Bewertungsskala
+  
+        <br>
+  
+        Um Ihnen ein vollständiges Verständnis der Bewertungsskala zu vermitteln, präsentieren wir Ihnen ein letztes Beispiel. 
+        Bitte lesen Sie das letzte Beispiel durch: 
+
+        (3) A: Hat Peter inzwischen aufgegeben?
+            B: Nein, das Handtuch, das würde er bestimmt nie werfen!
+        
+        Diese Aussage von B ist zwar kein wohlgeformter Satz des Deutschen, aber würde im Alltag eines Muttersprachlers oder einer Muttersprachlerin vermutlich dennoch verstanden werden. 
+        Diese Aussage wäre somit -je nach ihrer eigenen Einschätzung- als 4, d. h. weder akzeptabel noch inakzeptabel, zu bewerten.
+        
+        Die Beispiele sollen Ihnen lediglich einen Überblick über mögliche Dialoge geben. 
+        Bitte bewerten Sie die Aussagen von B nach Ihrem intuitiven Gefühl als Muttersprachler:in.
+
+        Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
+        
       </InstructionScreen>
   
       <Screen :validations="{
@@ -18,20 +89,19 @@
         }
       }">
   
-        <Slide>
-          <Record :data="{
-                group: group,
-                task: 'solution'
-                }" />
-          <p><div style='color:gray'>Background scenario</div></p>
-          <p>{{background}}</p>
-          <p><div style='color:gray'>Question</div></p>
-          <p><strong>In your opinion what does Addison need to do to reduce crime?</strong></p>
-          <TextareaInput
-              :response.sync= "$magpie.measurements.response"
-            />
-            <button v-if="!$magpie.validateMeasurements.response.$invalid" @click="$magpie.saveAndNextScreen();">Continue</button>
-        </Slide>
+    <Experiment>
+      <Screen>
+
+      <Slide>
+        This is a dog.<br/>
+        <button @click="$refs.audio.play()">Start</button>
+        <button @click="$refs.audio.pause()">Stop</button>
+        <audio ref="audio" src="audio/dog_bark.ogg" loop />
+      </Slide>
+
+    </Screen>
+
+      </Experiment>
   
       </Screen>
   
@@ -44,33 +114,17 @@
         <Slide >
           <Record :data="{
                 group: group,
-                task: 'reliability'
+                task: 'acceptability rating'
                 }" />
-          Please rate the reliability of the text.
-          <RatingInput quid="Quelle" :right="'very reliable'" :left="'not reliable'" :response.sync="$magpie.measurements.response" />
+          Please rate the naturalness of speaker B's response.
+          <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" :response.sync="$magpie.measurements.response" />
   
           <button v-if="!$magpie.validateMeasurements.response.$invalid" @click="$magpie.saveAndNextScreen()">Submit</button>
   
         </Slide>
       </Screen>
   
-      <Screen>
-  
-        <Slide>
-          <Record :data="{
-                group: group,
-                task: 'affiliation'
-                }" />
-          <p>Please state your political affiliation.</p>
-          <ForcedChoiceInput
-              :response.sync= "$magpie.measurements.response"
-              :options="['Democrat', 'Republican', 'neither', 'rather not say']"
-            @update:response="$magpie.saveAndNextScreen();"/>
-        </Slide>
-  
-      </Screen>
-  
-  
+       
       <PostTestScreen />
       <SubmitResultsScreen />
     </Experiment>
