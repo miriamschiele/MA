@@ -1,0 +1,14 @@
+(1)	Peter hat seinem Bruder ein BUCH geschenkt.
+ 	Nein, seinem VATER.
+(2)	Peter hat dem Polizisten seinen AUSWEIS gezeigt.
+	Nein, dem TÜRSTEHER.
+(3)	Peter hat seinem Chef den neuen MITARBEITER vorgestellt.
+	Nein, seinem KOLLEGEN.
+(4)	Peter hat dem Maler ein GETRÄNK angeboten.
+	Nein, dem GÄRTNER.
+(5)	Peter hat seinem Kollegen URLAUBSBILDER gezeigt.
+	Nein, seinem NACHBARN.
+(6)	Peter hat seinem Neffen WERKZEUG geschenkt.
+	Nein, seinem NACHBARN.
+(7)	Peter hat seinem Vorgesetzten einen KAFFEE gebracht.
+	Nein, seinem MITBEWOHNER.

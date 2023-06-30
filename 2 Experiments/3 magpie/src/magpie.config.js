@@ -7,5 +7,5 @@ export default {
   contactEmail: 'm.schiele12@gmail.com',
   // Either 'debug', 'directLink' or 'prolific'
   mode: 'debug',
-  language: 'en'
+  language: 'de'
 };

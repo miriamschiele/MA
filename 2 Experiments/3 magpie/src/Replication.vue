@@ -1,176 +1,255 @@
 <template>
-    <Experiment title="Study on problem solving">
-      <InstructionScreen :title="'Welcome'">
+  <Experiment title="Study on dialogues">
+    <InstructionScreen :title="'Willkommen'">
+      <div style="font-weight: bold;">
         Herzlich willkommen und vielen Dank, dass Sie an dieser Studie teilnehmen!
-  
-        <br>
-  
-        Im Folgenden werden Ihnen kurze Dialoge präsentiert. 
-        Die Aussage des Sprechers A dient lediglich dazu, Ihnen den Kontext des Gesprächs verständlich zu machen.
-        Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt.
-        Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache. 
-        Sie können auf einer Skala von 1 (völlig akzeptable) bis 7 (völlig inakzeptabel) bewerten, wie akzeptable Sie die präsentierten Aussagen der Sprecherin B finden. 
+      </div>
 
-        Das Bearbeiten des Fragebogens wird etwa 5 Minuten in Anspruch nehmen.
 
-        Hinweise zur Freiwilligkeit und Datenschutz:
-        Ihre Angaben werden vertraulich behandelt.
-        Die Auswertungen erfolgen in Übereinstimmung mit den bestehenden Datenschutzgesetzen vollkommen anonym. 
-        Die Daten werden dabei so gespeichert, dass jede Rückverfolgung zu persönlichen Informationen ausgeschlossen ist. 
-        Mit Abschluss der Studie stimmen Sie zu, dass Ihre Daten in anonymisierter Form zu Forschungszwecken verwendet werden dürfen.
-        Die Teilnahme an der Studie ist freiwillig. Sie können jederzeit und ohne Angabe von Gründen die Teilnahme an dieser Studie beenden, ohne dass Ihnen daraus Nachteile entstehen. 
-      
-         
-        
-      </InstructionScreen>
+      <br>
 
-      <InstructionScreen :title="'Einführung 1/3'">
+      Im Folgenden werden Ihnen kurze Dialoge zwischen zwei Personen A und B präsentiert.
+      <br>
+      <br>
+      Die Aussage des Sprechers A dient lediglich dazu, Ihnen den Kontext des Gesprächs verständlich zu machen.
+      Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt.
+      Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache.
+      <br>
+      <br>
+      Sie können auf einer Skala von <b> 1 (völlig akzeptabel) </b> bis <b> 7 (völlig inakzeptabel) </b> bewerten, wie
+      natürlich Sie die präsentierten Aussagen der Sprecherin B finden.
+      <br>
+      <br>
+      Das Bearbeiten des Fragebogens wird etwa 5 Minuten in Anspruch nehmen.
+      <br>
+      <br>
+      <br>
+      <div style="font-weight: bold;">
+        Hinweise zur Freiwilligkeit und Datenschutz
+      </div>
+      <br>
+      Ihre Angaben werden vertraulich behandelt.
+      Die Auswertungen erfolgen in Übereinstimmung mit den bestehenden Datenschutzgesetzen vollkommen anonym.
+      Die Daten werden dabei so gespeichert, dass jede Rückverfolgung zu persönlichen Informationen ausgeschlossen ist.
+      <br>
+      Mit Abschluss der Studie stimmen Sie zu, dass Ihre Daten in anonymisierter Form zu Forschungszwecken verwendet
+      werden dürfen.
+      Die Teilnahme an der Studie ist freiwillig. Sie können jederzeit und ohne Angabe von Gründen die Teilnahme an dieser
+      Studie beenden, ohne dass Ihnen daraus Nachteile entstehen.
+
+
+
+    </InstructionScreen>
+
+    <InstructionScreen :title="'Einführung 1/3'">
+      <div style="font-weight: bold;">
         Hinweise zur Bewertungsskala
-  
-        <br>
-  
-        Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren wir Ihnen drei Beispiele. 
-        Bitte lesen Sie das erste Beispiel durch: 
+      </div>
 
-        (1) A: was mag Peter?
-            B: Peter mag Ingwer.
+      <br>
 
-            Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte sehr wahrscheinlich so in der gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen. 
-            Daher wäre eine solche Aussage mit 1 (völlig akzeptabel) zu bewerten.       
-      
-         
-        
-      </InstructionScreen>
+      Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren
+      wir Ihnen drei Beispiele.
+      Bitte lesen Sie das <b>erste Beispiel</b> durch:
+      <br>
+      <br>
 
-      <InstructionScreen :title="'Einführung 2/3'">
+      (1) A: Was mag Peter?
+      <br>
+      <div style="margin-left: 25px;">
+        B: Peter mag Ingwer.
+      </div>
+
+      <br>
+      <br>
+      Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte sehr wahrscheinlich so in der
+      gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen.
+      Daher wäre eine solche Aussage mit <b> 1 (völlig akzeptabel) </b> zu bewerten.
+
+
+
+    </InstructionScreen>
+
+    <InstructionScreen :title="'Einführung 2/3'">
+      <div style="font-weight: bold;">
         Hinweise zur Bewertungsskala
-  
-        <br>
-  
-        Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren wir Ihnen drei Beispiele. 
-        Bitte lesen Sie das zweite Beispiel durch: 
+      </div>
+      <br>
 
-        (2) A: Was hat Peter gestern gemacht?
-            B: Vater Fußball gestern.
+      Um Ihnen ein klares Verständnis der Bewertungsskala zu vermitteln, die in dieser Studie verwendet wird, präsentieren
+      wir Ihnen drei Beispiele.
+      Bitte lesen Sie das <b>zweite Beispiel</b> durch:
+      <br>
+      <br>
 
-        Da diese Aussage von B nicht den Regeln des Deutschen entspricht und sehr unwahrscheinlich so in der gesprochenen Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin vorkommen würde, wäre eine solche Aussage mit 7, d. h. völlig inakzeptabel, zu bewerten.
+      (2) A: Was hat Peter gestern gemacht?
+      <br>
+      <div style="margin-left: 25px;">
+        B: Vater Fußball gestern.
+      </div>
+
+      <br>
+      <br>
+
+      Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde sehr unwahrscheinlich so in der gesprochenen
+      Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin nicht vorkommen. Daher wäre eine solche
+      Aussage mit <b> 7 (völlig inakzeptabel) </b> zu bewerten.
 
 
-      
-         
-        
-      </InstructionScreen>
 
-      <InstructionScreen :title="'Einführung 3/3'">
+
+
+    </InstructionScreen>
+
+    <InstructionScreen :title="'Einführung 3/3'">
+      <div style="font-weight: bold;">
         Hinweise zur Bewertungsskala
-  
-        <br>
-  
-        Um Ihnen ein vollständiges Verständnis der Bewertungsskala zu vermitteln, präsentieren wir Ihnen ein letztes Beispiel. 
-        Bitte lesen Sie das letzte Beispiel durch: 
+      </div>
+      <br>
 
-        (3) A: Hat Peter inzwischen aufgegeben?
-            B: Nein, das Handtuch, das würde er bestimmt nie werfen!
-        
-        Diese Aussage von B ist zwar kein wohlgeformter Satz des Deutschen, aber würde im Alltag eines Muttersprachlers oder einer Muttersprachlerin vermutlich dennoch verstanden werden. 
-        Diese Aussage wäre somit -je nach ihrer eigenen Einschätzung- als 4, d. h. weder akzeptabel noch inakzeptabel, zu bewerten.
-        
-        Die Beispiele sollen Ihnen lediglich einen Überblick über mögliche Dialoge geben. 
-        Bitte bewerten Sie die Aussagen von B nach Ihrem intuitiven Gefühl als Muttersprachler:in.
+      Um Ihnen ein vollständiges Verständnis der Bewertungsskala zu vermitteln, präsentieren wir Ihnen ein letztes
+      Beispiel.
+      Bitte lesen Sie das <b>letzte Beispiel</b> durch:
+      <br>
+      <br>
+      (3) A: Hat Peter inzwischen aufgegeben?
+      <br>
+      <div style="margin-left: 25px;">
+        B: Nein, das Handtuch, das würde er bestimmt nie werfen!
+      </div>
 
-        Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
-        
-      </InstructionScreen>
-  
-      <Screen :validations="{
-        response: {
-          minLength: $magpie.v.minLength(5),
-          required: $magpie.v.required
-        }
-      }">
-  
-    <Experiment>
-      <Screen>
+      <br>
+      <br>
 
-      <Slide>
-        This is a dog.<br/>
-        <button @click="$refs.audio.play()">Start</button>
-        <button @click="$refs.audio.pause()">Stop</button>
-        <audio ref="audio" src="audio/dog_bark.ogg" loop />
-      </Slide>
+      Diese Aussage von B ist zwar kein wohlgeformter Satz des Deutschen, aber würde im Alltag eines Muttersprachlers oder
+      einer Muttersprachlerin vermutlich dennoch verstanden werden.
+      Diese Aussage wäre somit -je nach ihrer eigenen Einschätzung- als <b> 3, 4 oder 5 (weder akzeptabel noch
+        inakzeptabel) </b> zu bewerten.
+      <br>
+      <br>
+      Die Beispiele sollen Ihnen lediglich einen Überblick über mögliche Dialoge geben.
+      Bitte bewerten Sie die Aussagen von B nach Ihrem intuitiven Gefühl als Muttersprachler:in.
+      <br>
+      <br>
+      In der Studie werden Ihnen die Dialoge entweder als Text oder als Audioaufnahme präsentiert.
+      <br>
+      <br>
+      Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
+
+    </InstructionScreen>
+    <Screen :validations="{
+      response: {
+        minLength: $magpie.v.minLength(5),
+        required: $magpie.v.required
+      }
+    }">
+
+
+      <div v-if="stimuli == 'auditory'">
+        <Slide >
+          This is a dog.<br />
+          <button @click="$refs.audio.play()">Start</button>
+          <button @click="$refs.audio.pause()">Stop</button>
+          <audio ref="audio" src="./assets/CWF1-combined.wav" loop />
+        </Slide>
+      </div>
+
+      <div v-if="stimuli == 'written'">
+        <div v-for="sentence in sentences">
+          <Slide >
+
+            {{ sentence[0] }}
+            <br>
+            {{ sentence[1] }}
+            <br>
+            <button @click="$magpie.nextSlide()">Next slide</button>
+
+            </Slide>
+        </div>
+        
+
+      </div>
+
+
 
     </Screen>
 
-      </Experiment>
+    <Screen :validations="{
+      response: {
+        required: $magpie.v.required
+      }
+    }">
+      <Slide>
+        <Record :data="{
+          task: 'acceptability rating'
+        }" />
+        Please rate the naturalness of speaker B's response.
+        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
+          :response.sync="$magpie.measurements.response" />
+
+        <button v-if="!$magpie.validateMeasurements.response.$invalid"
+          @click="$magpie.saveAndNextScreen()">Submit</button>
+
+      </Slide>
+    </Screen>
+
+
+    <PostTestScreen />
+    <SubmitResultsScreen />
+  </Experiment>
+</template>
   
-      </Screen>
-  
-      
-      <Screen :validations="{
-        response: {
-          required: $magpie.v.required
-        }
-      }">
-        <Slide >
-          <Record :data="{
-                group: group,
-                task: 'acceptability rating'
-                }" />
-          Please rate the naturalness of speaker B's response.
-          <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" :response.sync="$magpie.measurements.response" />
-  
-          <button v-if="!$magpie.validateMeasurements.response.$invalid" @click="$magpie.saveAndNextScreen()">Submit</button>
-  
-        </Slide>
-      </Screen>
-  
-       
-      <PostTestScreen />
-      <SubmitResultsScreen />
-    </Experiment>
-  </template>
-  
-  <script>
-  import _ from 'lodash';
-  // determine group
-  var group = _.shuffle(["beast, long vignette", "virus, long vignette", "beast, short vignette", "virus, short vignette"])[0] 
-  var backgrounds = {
-      "beast, long vignette": "Crime is a wild beast preying on the city of Addison. The crime rate in the once peaceful city has steadily increased over the past three years. In fact, these days it seems that crime is lurking in every neighborhood. In 2004, 46,177 crimes were reported compared to more than 55,000 reported in 2007. The rise in violent crime is particularly alarming. In 2004, there were 330 murders in the city, in 2007, there were over 500.",
-      "virus, long vignette": "Crime is a virus infecting on the city of Addison. The crime rate in the once peaceful city has steadily increased over the past three years. In fact, these days it seems that crime is plaguing every neighborhood. In 2004, 46,177 crimes were reported compared to more than 55,000 reported in 2007. The rise in violent crime is particularly alarming. In 2004, there were 330 murders in the city, in 2007, there were over 500.",
-      "beast, short vignette": "Crime is a wild beast preying on the city of Addison. The crime rate in the once peaceful city has steadily increased over the past three years. In fact, these days it seems that crime is lurking in every neighborhood. The rise in violent crime is particularly alarming.",
-      "virus, short vignette": "Crime is a virus infecting on the city of Addison. The crime rate in the once peaceful city has steadily increased over the past three years. In fact, these days it seems that crime is plaguing every neighborhood. The rise in violent crime is particularly alarming.",
+<script>
+import _ from 'lodash';
+import file from './assets/wF.txt'
+// determine group
+const fileContents = file.split(';')
+var sentences = []
+while (fileContents.length != 0) {
+  if (fileContents[0] == '') {
+    break;
   }
-  var background = backgrounds[group]
-  console.log(group)
-  export default {
-    methods: {
-      chooseQuestion: function () {
-        return this.random;
-      },
-      randomOption: function () {
-        const leftOption = this.options[Math.floor(Math.random() * this.options.length)];
-        const rightOption = this.options.find(option => option !== leftOption);
-        return [leftOption, rightOption]
-      }
+  const temp = []
+  temp.push(fileContents[0])
+  temp.push(fileContents[1])
+  sentences.push(temp)
+  fileContents.splice(0, 1)
+  fileContents.splice(0, 1)
+}
+
+sentences = _.shuffle(sentences);
+console.log(sentences[0])
+var stimuli = _.shuffle(['written', 'auditory'])[0]
+
+export default {
+  methods: {
+    chooseQuestion: function () {
+      return this.random;
     },
-    name: 'Replication',
-    data() {
-      return {
-          group: group,
-          background: background,
-        options: [
-          'Reform educational practices and create after school programs',
-          'Increase street patrols that look for criminals'
-        ],
-        random: Math.random(),
-        disableButton: true
-      };
-    },
-    computed: {
-      // Expose lodash to template code
-      _() {
-        return _;
-      }
+    randomOption: function () {
+      const leftOption = this.options[Math.floor(Math.random() * this.options.length)];
+      const rightOption = this.options.find(option => option !== leftOption);
+      return [leftOption, rightOption]
     }
-  };
-  </script>
+  },
+  name: 'Replication',
+  data() {
+    return {
+      options: [
+        'Reform educational practices and create after school programs',
+        'Increase street patrols that look for criminals'
+      ],
+      stimuli: stimuli,
+      random: Math.random(),
+      disableButton: true,
+      sentences: sentences
+    };
+  },
+  computed: {
+    // Expose lodash to template code
+    _() {
+      return _;
+    }
+  }
+};
+</script>
