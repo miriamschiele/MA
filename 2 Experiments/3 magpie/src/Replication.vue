@@ -146,23 +146,29 @@
 
 
       <div v-if="stimuli == 'auditory'">
-        <Slide >
-          This is a dog.<br />
-          <button @click="$refs.audio.play()">Start</button>
-          <button @click="$refs.audio.pause()">Stop</button>
-          <audio ref="audio" src="./assets/CWF1-combined.wav" loop />
+        <div v-for="(audioFile, index) in audioFileNames" :key="index">
+          <Slide v-if="index === selectedIndex">
+          {{ audioFile }}<br />
+          <button @click="$refs.audio[index].play()">Start</button>
+          <button @click="$refs.audio[index].pause()">Stop</button>
+          <audio ref="audio" :src="audioFile" loop />
         </Slide>
+        </div>
+        
       </div>
 
       <div v-if="stimuli == 'written'">
-        <div v-for="sentence in sentences">
-          <Slide >
-
+        <div v-for="(sentence, index) in sentences" :key="index">
+          
+          <Slide v-if="index === selectedIndex">
+            {{selectedIndex}}
             {{ sentence[0] }}
             <br>
             {{ sentence[1] }}
             <br>
-            <button @click="$magpie.nextSlide()">Next slide</button>
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
+          :response.sync="$magpie.measurements.response" />
+            <button @click="goToNextSlide">Next slide</button>
 
             </Slide>
         </div>
@@ -185,7 +191,7 @@
         }" />
         Please rate the naturalness of speaker B's response.
         <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
-          :response.sync="$magpie.measurements.response" />
+          :response.sync="$magpie.measurements.naturalness" />
 
         <button v-if="!$magpie.validateMeasurements.response.$invalid"
           @click="$magpie.saveAndNextScreen()">Submit</button>
@@ -217,9 +223,20 @@ while (fileContents.length != 0) {
   fileContents.splice(0, 1)
 }
 
+
 sentences = _.shuffle(sentences);
-console.log(sentences[0])
+const audioFiles = require.context(
+  '@/assets',
+  true,
+  /^.*\.wav$/
+)
+let audioFileNames = audioFiles.keys();
+audioFileNames = audioFileNames.map(file  => { return file.replace('.','./assets')});
+audioFileNames = _.shuffle(audioFileNames);
+
 var stimuli = _.shuffle(['written', 'auditory'])[0]
+
+
 
 export default {
   methods: {
@@ -230,6 +247,15 @@ export default {
       const leftOption = this.options[Math.floor(Math.random() * this.options.length)];
       const rightOption = this.options.find(option => option !== leftOption);
       return [leftOption, rightOption]
+    },
+    goToNextSlide() {
+      const listType = this.stimuli == 'written' ? this.sentences: this.audioFileNames
+      if (this.selectedIndex < this.listType.length - 1) {
+        this.selectedIndex++;
+      } else {
+        $magpie.saveAndNextScreen()
+        return; // Wrap around to the first item if at the end
+      }
     }
   },
   name: 'Replication',
@@ -242,7 +268,9 @@ export default {
       stimuli: stimuli,
       random: Math.random(),
       disableButton: true,
-      sentences: sentences
+      sentences: sentences,
+      audioFileNames: audioFileNames,
+      selectedIndex: 0
     };
   },
   computed: {
