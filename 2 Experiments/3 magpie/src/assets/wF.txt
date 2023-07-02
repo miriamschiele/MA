@@ -1,6 +1,6 @@
-A: Peter hat in der Mensa zu Mittag gegessen.;			 	 	 	
+A: Peter hat in der Mensa zu Mittag gegessen.; 		 	 	 	
 B: Ja, zusammen mit Freunden.;
-A: Peter hat den Gegenspieler vorsätzlich gefoult.;		
+A: Peter hat den Gegenspieler vorsätzlich gefoult.;
 B: Ja, den Stürmer.;
 A: Peter hat die SÜDDEUTSCHE gelesen.;				
 B: Nein, er hat die FAZ gelesen.;

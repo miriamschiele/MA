@@ -148,31 +148,33 @@
       <div v-if="stimuli == 'auditory'">
         <div v-for="(audioFile, index) in audioFileNames" :key="index">
           <Slide v-if="index === selectedIndex">
-          {{ audioFile }}<br />
-          <button @click="$refs.audio[index].play()">Start</button>
-          <button @click="$refs.audio[index].pause()">Stop</button>
-          <audio ref="audio" :src="audioFile" loop />
-        </Slide>
+            {{ audioFile }}<br />
+            <button @click="$refs.audio[index].play()">Start</button>
+            <button @click="$refs.audio[index].pause()">Stop</button>
+            <audio ref="audio" :src="audioFile" loop />
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
+            <button
+            @click="goToNextSlide">Next slide</button>
+          </Slide>
         </div>
-        
+
       </div>
 
       <div v-if="stimuli == 'written'">
         <div v-for="(sentence, index) in sentences" :key="index">
-          
+
           <Slide v-if="index === selectedIndex">
-            {{selectedIndex}}
+            {{ selectedIndex }}
             {{ sentence[0] }}
             <br>
             {{ sentence[1] }}
             <br>
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
-          :response.sync="$magpie.measurements.response" />
-            <button @click="goToNextSlide">Next slide</button>
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
+              <button @click="goToNextSlide">Next slide</button>
 
-            </Slide>
+          </Slide>
         </div>
-        
+
 
       </div>
 
@@ -181,7 +183,7 @@
     </Screen>
 
     <Screen :validations="{
-      response: {
+      naturalness: {
         required: $magpie.v.required
       }
     }">
@@ -190,10 +192,9 @@
           task: 'acceptability rating'
         }" />
         Please rate the naturalness of speaker B's response.
-        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
-          :response.sync="$magpie.measurements.naturalness" />
+        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
 
-        <button v-if="!$magpie.validateMeasurements.response.$invalid"
+        <button 
           @click="$magpie.saveAndNextScreen()">Submit</button>
 
       </Slide>
@@ -208,6 +209,62 @@
 <script>
 import _ from 'lodash';
 import file from './assets/wF.txt'
+
+//Import all audio files manually
+import CWF1 from "./assets/CWF1-combined.wav";
+import CWF2 from "./assets/CWF2-combined.wav";
+import CWF3 from "./assets/CWF3-combined.wav";
+import CWF4 from "./assets/CWF4-combined.wav";
+import CWF5 from "./assets/CWF5-combined.wav";
+import CWF6 from "./assets/CWF6-combined.wav";
+import CWF7 from "./assets/CWF7-combined.wav";
+import CWL1 from "./assets/CWL1-combined.wav";
+import CWL2 from "./assets/CWL2-combined.wav";
+import CWL3 from "./assets/CWL3-combined.wav";
+import CWL4 from "./assets/CWL4-combined.wav";
+import CWL5 from "./assets/CWL5-combined.wav";
+import CWL6 from "./assets/CWL6-combined.wav";
+import CWL7 from "./assets/CWL7-combined.wav";
+import CWOF1 from "./assets/CWOF1-combined.wav";
+import CWOF2 from "./assets/CWOF2-combined.wav";
+import CWOF3 from "./assets/CWOF3-combined.wav";
+import CWOF4 from "./assets/CWOF4-combined.wav";
+import CWOF5 from "./assets/CWOF5-combined.wav";
+import CWOF6 from "./assets/CWOF6-combined.wav";
+import CWOF7 from "./assets/CWOF7-combined.wav";
+import FA1 from "./assets/FA1-combined.wav";
+import FA2 from "./assets/FA2-combined.wav";
+import FA3 from "./assets/FA3-combined.wav";
+import FA4 from "./assets/FA4-combined.wav";
+import FA5 from "./assets/FA5-combined.wav";
+import FB1 from "./assets/FB1-combined.wav";
+import FB2 from "./assets/FB2-combined.wav";
+import FB3 from "./assets/FB3-combined.wav";
+import FB4 from "./assets/FB4-combined.wav";
+import FB5 from "./assets/FB5-combined.wav";
+import FB6 from "./assets/FB6-combined.wav";
+import FC1 from "./assets/FC1-combined.wav";
+import FC2 from "./assets/FC2-combined.wav";
+import FC3 from "./assets/FC3-combined.wav";
+import FC4 from "./assets/FC4-combined.wav";
+import FC5 from "./assets/FC5-combined.wav";
+import FC6 from "./assets/FC6-combined.wav";
+import FD1 from "./assets/FD1-combined.wav";
+import FD2 from "./assets/FD2-combined.wav";
+import FD3 from "./assets/FD3-combined.wav";
+import FD4 from "./assets/FD4-combined.wav";
+import FD5 from "./assets/FD5-combined.wav";
+import FD6 from "./assets/FD6-combined.wav";
+import FE1 from "./assets/FE1-combined.wav";
+import FE2 from "./assets/FE2-combined.wav";
+import FE3 from "./assets/FE3-combined.wav";
+import FE4 from "./assets/FE4-combined.wav";
+import FE5 from "./assets/FE5-combined.wav";
+
+
+
+
+
 // determine group
 const fileContents = file.split(';')
 var sentences = []
@@ -225,13 +282,17 @@ while (fileContents.length != 0) {
 
 
 sentences = _.shuffle(sentences);
-const audioFiles = require.context(
-  '@/assets',
-  true,
-  /^.*\.wav$/
-)
-let audioFileNames = audioFiles.keys();
-audioFileNames = audioFileNames.map(file  => { return file.replace('.','./assets')});
+
+let audioFileNames = [
+  CWF1, CWF2, CWF3, CWF4, CWF5, CWF6, CWF7, 
+  CWL1, CWL2, CWL3, CWL4, CWL5, CWL6, CWL7, 
+  CWOF1, CWOF2, CWOF3, CWOF4, CWOF5, CWOF6, CWOF7, 
+  FA1, FA2, FA3, FA4, FA5, 
+  FB1, FB2, FB3, FB4, FB5, FB6, 
+  FC1, FC2, FC3, FC4, FC5, FC6, 
+  FD1, FD2, FD3, FD4, FD5, FD6, 
+  FE1, FE2, FE3, FE4, FE5
+]
 audioFileNames = _.shuffle(audioFileNames);
 
 var stimuli = _.shuffle(['written', 'auditory'])[0]
@@ -249,8 +310,8 @@ export default {
       return [leftOption, rightOption]
     },
     goToNextSlide() {
-      const listType = this.stimuli == 'written' ? this.sentences: this.audioFileNames
-      if (this.selectedIndex < this.listType.length - 1) {
+      const numberOfStimuli = 56
+      if (this.selectedIndex < numberOfStimuli - 1) {
         this.selectedIndex++;
       } else {
         $magpie.saveAndNextScreen()
@@ -258,7 +319,7 @@ export default {
       }
     }
   },
-  name: 'Replication',
+  name: 'Main',
   data() {
     return {
       options: [
