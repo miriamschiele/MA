@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         folder:
-          - "2 Experiments"/"3 magpie"/
+          - experiments/magpie/
 
     runs-on: ubuntu-latest
     steps:
