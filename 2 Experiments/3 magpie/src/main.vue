@@ -61,7 +61,7 @@
       </div>
 
       <br>
-      <br>
+      
       Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte sehr wahrscheinlich so in der
       gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen.
       Daher wäre eine solche Aussage mit <b> 1 (völlig akzeptabel) </b> zu bewerten.
@@ -89,8 +89,7 @@
       </div>
 
       <br>
-      <br>
-
+      
       Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde sehr unwahrscheinlich so in der gesprochenen
       Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin nicht vorkommen. Daher wäre eine solche
       Aussage mit <b> 7 (völlig inakzeptabel) </b> zu bewerten.
@@ -119,7 +118,6 @@
       </div>
 
       <br>
-      <br>
 
       Diese Aussage von B ist zwar kein wohlgeformter Satz des Deutschen, aber würde im Alltag eines Muttersprachlers oder
       einer Muttersprachlerin vermutlich dennoch verstanden werden.
@@ -135,7 +133,6 @@
       <br>
       <br>
       Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
-
     </InstructionScreen>
     <Screen :validations="{
       response: {
@@ -148,11 +145,19 @@
       <div v-if="stimuli == 'auditory'">
         <div v-for="(audioFile, index) in audioFileNames" :key="index">
           <Slide v-if="index === selectedIndex">
-            {{ audioFile }}<br />
-            <button @click="$refs.audio[index].play()">Start</button>
-            <button @click="$refs.audio[index].pause()">Stop</button>
-            <audio ref="audio" :src="audioFile" loop />
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
+            {{ index + 1 }}
+            <b> Ihre Bewertung</b>
+            <br>
+            <br>
+            Bitte klicken Sie auf "Start", um den Dialog abspielen zu lassen. 
+            <br>
+            Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
+            <br>
+            <br />
+            <button @click="$refs.audio[0].play()">Start</button>
+            <button @click="$refs.audio[0].pause()">Stop</button>
+            <audio ref="audio" :src="audioFile" />
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"/>
             <button
             @click="goToNextSlide">Next slide</button>
           </Slide>
@@ -162,9 +167,15 @@
 
       <div v-if="stimuli == 'written'">
         <div v-for="(sentence, index) in sentences" :key="index">
-
           <Slide v-if="index === selectedIndex">
-            {{ selectedIndex }}
+            <b> Ihre Bewertung</b>
+            <br>
+            <br>
+            Bitte lesen Sie sich den Dialog durch. 
+            <br>
+            Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
+            <br>
+            <br>
             {{ sentence[0] }}
             <br>
             {{ sentence[1] }}
@@ -208,7 +219,7 @@
   
 <script>
 import _ from 'lodash';
-import file from './assets/wF.txt'
+import file from './assets/written_stimuli.txt'
 
 //Import all audio files manually
 import CWF1 from "./assets/CWF1-combined.wav";
@@ -232,6 +243,13 @@ import CWOF4 from "./assets/CWOF4-combined.wav";
 import CWOF5 from "./assets/CWOF5-combined.wav";
 import CWOF6 from "./assets/CWOF6-combined.wav";
 import CWOF7 from "./assets/CWOF7-combined.wav";
+import CWOL1 from "./assets/CWOL1-combined.wav";
+import CWOL2 from "./assets/CWOL2-combined.wav";
+import CWOL3 from "./assets/CWOL3-combined.wav";
+import CWOL4 from "./assets/CWOL4-combined.wav";
+import CWOL5 from "./assets/CWOL5-combined.wav";
+import CWOL6 from "./assets/CWOL6-combined.wav";
+import CWOL7 from "./assets/CWOL7-combined.wav";
 import FA1 from "./assets/FA1-combined.wav";
 import FA2 from "./assets/FA2-combined.wav";
 import FA3 from "./assets/FA3-combined.wav";
@@ -287,6 +305,7 @@ let audioFileNames = [
   CWF1, CWF2, CWF3, CWF4, CWF5, CWF6, CWF7, 
   CWL1, CWL2, CWL3, CWL4, CWL5, CWL6, CWL7, 
   CWOF1, CWOF2, CWOF3, CWOF4, CWOF5, CWOF6, CWOF7, 
+  CWOL1, CWOL2, CWOL3, CWOL4, CWOL5, CWOL6, CWOL7, 
   FA1, FA2, FA3, FA4, FA5, 
   FB1, FB2, FB3, FB4, FB5, FB6, 
   FC1, FC2, FC3, FC4, FC5, FC6, 
@@ -322,10 +341,6 @@ export default {
   name: 'Main',
   data() {
     return {
-      options: [
-        'Reform educational practices and create after school programs',
-        'Increase street patrols that look for criminals'
-      ],
       stimuli: stimuli,
       random: Math.random(),
       disableButton: true,
