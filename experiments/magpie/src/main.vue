@@ -134,18 +134,18 @@
       <br>
       Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
     </InstructionScreen>
-    <Screen :validations="{
+    
+          <Screen v-if="stimuli == 'auditory' && selectedIndex <= audioFileNames.length" v-for="(audioFile, index) in audioFileNames" :key="index" :validations="{
       answer: {
         minLength: $magpie.v.minLength(5),
         required: $magpie.v.required
       }
     }">
-
-
-      <div v-if="stimuli == 'auditory'">
-        <div v-for="(audioFile, index) in audioFileNames" :key="index">
-          <Slide v-if="index === selectedIndex">
-            {{ index + 1 }}
+          <Slide>
+            <Record :data="{
+          stimuli: audioFile
+        }" />
+            {{ selectedIndex + 1 }}
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -159,16 +159,23 @@
             <audio ref="audio" :src="audioFile" />
             <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
               :response.sync="$magpie.measurements.answer"/>
-            <button v-if="!$magpie.validateMeasurements.answer.$invalid"
-            @click="goToNextSlide(audioFile, $magpie.measurements.answer)">Next slide</button>
+            <button
+            @click="goToNextSlide">Next slide</button>
           </Slide>
-        </div>
+          </Screen>
 
-      </div>
-
-      <div v-if="stimuli == 'written'">
-        <div v-for="(sentence, index) in sentences" :key="index">
-          <Slide v-if="index === selectedIndex">
+          <Screen v-if="stimuli == 'written' && selectedIndex <= sentences.length" v-for="(sentence, index) in sentences" :key="index" :validations="{
+      answer: {
+        minLength: $magpie.v.minLength(5),
+        required: $magpie.v.required
+      }
+    }">
+          
+          <Slide>
+            <Record :data="{
+          stimuli: sentence[0]
+        }" />
+        {{ selectedIndex + 1 }}
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -183,18 +190,14 @@
             <br>
             <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
               :response.sync="$magpie.measurements.answer"/>
-              <button v-if="!$magpie.validateMeasurements.answer.$invalid"
-              @click="goToNextSlide(sentence[0], $magpie.measurements.answer)">Next slide</button>
+              <button
+              @click="goToNextSlide">Next slide</button>
 
           </Slide>
-        </div>
-
-
-      </div>
+          </Screen>
 
 
 
-    </Screen>
 
     <Screen :validations="{
       naturalness: {
@@ -209,7 +212,7 @@
         <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
         :response.sync="$magpie.measurements.naturalness"/>
 
-        <button v-if="!$magpie.validateMeasurements.naturalness.$invalid"
+        <button
           @click="$magpie.saveAndNextScreen()">Submit</button>
 
       </Slide>
@@ -332,15 +335,10 @@ export default {
       const rightOption = this.options.find(option => option !== leftOption);
       return [leftOption, rightOption]
     },
-    goToNextSlide(id, measure) {
-      const numberOfStimuli = 56
-      if (this.selectedIndex < numberOfStimuli - 1) {
+    goToNextSlide() {
         this.selectedIndex++;
-      } else {
-        $magpie.addTrialData({id: measure});
-        $magpie.nextScreen();
+        $magpie.saveAndNextScreen()
         return; // Wrap around to the first item if at the end
-      }
     }
   },
   name: 'Main',
