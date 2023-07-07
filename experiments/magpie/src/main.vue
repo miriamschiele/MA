@@ -135,7 +135,7 @@
       Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
     </InstructionScreen>
     <Screen :validations="{
-      response: {
+      answer: {
         minLength: $magpie.v.minLength(5),
         required: $magpie.v.required
       }
@@ -157,9 +157,10 @@
             <button @click="$refs.audio[0].play()">Start</button>
             <button @click="$refs.audio[0].pause()">Stop</button>
             <audio ref="audio" :src="audioFile" />
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"/>
-            <button
-            @click="goToNextSlide">Next slide</button>
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
+              :response.sync="$magpie.measurements.answer"/>
+            <button v-if="!$magpie.validateMeasurements.answer.$invalid"
+            @click="goToNextSlide(audioFile, $magpie.measurements.answer)">Next slide</button>
           </Slide>
         </div>
 
@@ -180,8 +181,10 @@
             <br>
             {{ sentence[1] }}
             <br>
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
-              <button @click="goToNextSlide">Next slide</button>
+            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
+              :response.sync="$magpie.measurements.answer"/>
+              <button v-if="!$magpie.validateMeasurements.answer.$invalid"
+              @click="goToNextSlide(sentence[0], $magpie.measurements.answer)">Next slide</button>
 
           </Slide>
         </div>
@@ -203,9 +206,10 @@
           task: 'acceptability rating'
         }" />
         Please rate the naturalness of speaker B's response.
-        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" />
+        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
+        :response.sync="$magpie.measurements.naturalness"/>
 
-        <button 
+        <button v-if="!$magpie.validateMeasurements.naturalness.$invalid"
           @click="$magpie.saveAndNextScreen()">Submit</button>
 
       </Slide>
@@ -328,12 +332,13 @@ export default {
       const rightOption = this.options.find(option => option !== leftOption);
       return [leftOption, rightOption]
     },
-    goToNextSlide() {
+    goToNextSlide(id, measure) {
       const numberOfStimuli = 56
       if (this.selectedIndex < numberOfStimuli - 1) {
         this.selectedIndex++;
       } else {
-        $magpie.saveAndNextScreen()
+        $magpie.addTrialData({id: measure});
+        $magpie.nextScreen();
         return; // Wrap around to the first item if at the end
       }
     }
