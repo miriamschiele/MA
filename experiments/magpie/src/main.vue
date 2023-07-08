@@ -143,7 +143,8 @@
     }">
           <Slide>
             <Record :data="{
-          stimuli: audioFile
+          stimuli: audioName(audioFile),
+          modality: 'auditory'
         }" />
             {{ selectedIndex + 1 }}
             <b> Ihre Bewertung</b>
@@ -173,7 +174,8 @@
           
           <Slide>
             <Record :data="{
-          stimuli: sentence[0]
+          stimuli: sentence[1] + ',' + sentence[2],
+          modality: 'written'
         }" />
         {{ selectedIndex + 1 }}
             <b> Ihre Bewertung</b>
@@ -186,7 +188,7 @@
             <br>
             {{ sentence[0] }}
             <br>
-            {{ sentence[1] }}
+            {{ sentence[3] }}
             <br>
             <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
               :response.sync="$magpie.measurements.answer"/>
@@ -195,28 +197,6 @@
 
           </Slide>
           </Screen>
-
-
-
-
-    <Screen :validations="{
-      naturalness: {
-        required: $magpie.v.required
-      }
-    }">
-      <Slide>
-        <Record :data="{
-          task: 'acceptability rating'
-        }" />
-        Please rate the naturalness of speaker B's response.
-        <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
-        :response.sync="$magpie.measurements.naturalness"/>
-
-        <button
-          @click="$magpie.saveAndNextScreen()">Submit</button>
-
-      </Slide>
-    </Screen>
 
 
     <PostTestScreen />
@@ -292,6 +272,7 @@ import FE5 from "./assets/FE5-combined.wav";
 
 // determine group
 const fileContents = file.split(';')
+console.log(fileContents)
 var sentences = []
 while (fileContents.length != 0) {
   if (fileContents[0] == '') {
@@ -300,14 +281,22 @@ while (fileContents.length != 0) {
   const temp = []
   temp.push(fileContents[0])
   temp.push(fileContents[1])
+  temp.push(fileContents[2])
+  temp.push(fileContents[3])
+  temp.push(fileContents[4])
+  temp.push(fileContents[5])
   sentences.push(temp)
+  fileContents.splice(0, 1)
+  fileContents.splice(0, 1)
+  fileContents.splice(0, 1)
+  fileContents.splice(0, 1)
   fileContents.splice(0, 1)
   fileContents.splice(0, 1)
 }
 
 
 sentences = _.shuffle(sentences);
-
+console.log(sentences)
 let audioFileNames = [
   CWF1, CWF2, CWF3, CWF4, CWF5, CWF6, CWF7, 
   CWL1, CWL2, CWL3, CWL4, CWL5, CWL6, CWL7, 
@@ -339,6 +328,9 @@ export default {
         this.selectedIndex++;
         $magpie.saveAndNextScreen()
         return; // Wrap around to the first item if at the end
+    },
+    audioName(name) {
+      return name.split('-')[0].split('/media/')[1]
     }
   },
   name: 'Main',
