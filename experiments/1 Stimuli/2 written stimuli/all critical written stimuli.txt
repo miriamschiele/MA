@@ -1,0 +1,63 @@
+CWF
+Peter hat AB 18 Uhr im Kino gearbeitet.;
+Nein, BIS 18 Uhr.;
+Peter hat BIS August Miete gezahlt.;
+Nein, AB August.;
+Peter hat MIT seinem Bruder Unterschriften gesammelt.;
+Nein, OHNE seinen Bruder.;
+Peter hat OHNE sein Team einen Vortrag gehalten.;
+Nein, MIT seinem Team.;
+Peter hat VOR seiner Mittagspause seine Chefin angerufen.;
+Nein, NACH seiner Mittagspause.; 
+Peter hat NACH seinem Urlaub den Handwerker gerufen.;
+Nein, VOR seinem Urlaub.;
+Peter ist VOR seinem Einkauf noch zur Bank gegangen.;
+Nein, NACH seinem Einkauf.;
+
+CWOF
+Peter hat ab 18 Uhr im Kino gearbeitet.
+Nein, bis 18 Uhr. 
+Peter hat bis August Miete gezahlt.
+Nein, ab August.
+Peter hat mit seinem Bruder Unterschriften gesammelt.
+Nein, ohne seinen Bruder.
+Peter hat ohne sein Team einen Vortrag gehalten.
+Nein, mit seinem Team.
+Peter hat vor seiner Mittagspause seine Chefin angerufen.
+Nein, nach seiner Mittagspause.
+Peter hat nach seinem Urlaub den Handwerker gerufen.
+Nein, vor seinem Urlaub.
+Peter ist vor seinem Einkauf noch zur Bank gegangen.
+Nein, nach seinem Einkauf.
+
+CWL
+Peter hat seinem BRUDER ein Buch geschenkt.;
+Nein, seinem VATER.;
+Peter hat dem POLIZISTEN seinen Ausweis gezeigt.;
+Nein, dem TÜRSTEHER.;
+Peter hat seinem CHEF den neuen Mitarbeiter vorgestellt.;
+Nein, seinem KOLLEGEN.;
+Peter hat dem MALER ein Getränk angeboten.;
+Nein, dem GÄRTNER.;
+Peter hat seinem KOLLEGEN Urlaubsbilder gezeigt.;
+Nein, seinem NACHBARN.;
+Peter hat seinem NEFFEN Werkzeug geschenkt.;
+Nein, seinem NACHBARN.;
+Peter hat seinem VORGESETZTEN einen Kaffee gebracht.;
+Nein, seinem MITBEWOHNER.;
+
+CWOL
+Peter hat seinem Bruder ein Buch geschenkt.;
+Nein, seinem Vater.;
+Peter hat dem Polizisten seinen Ausweis gezeigt.;
+Nein, dem Türsteher.;
+Peter hat seinem Chef den neuen MItarbeiter vorgestellt.;
+Nein, seinem Kollegen.;
+Peter hat dem Maler ein Getränk angeboten.;
+Nein, dem Gärtner.;
+Peter hat seinem Kollegen Urlaubsbilder gezeigt.;
+Nein, seinem Nachbarn.;
+Peter hat seinem Neffen Werkzeug geschenkt.;
+Nein, seinem Nachbarn.;
+Peter hat seinem Vorgesetzten einen Kaffee gebracht.;
+Nein, seinem Mitbewohner.;
