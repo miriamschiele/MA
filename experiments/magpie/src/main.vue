@@ -12,7 +12,7 @@
       <br>
       <br>
       Die Aussage des Sprechers A dient lediglich dazu, Ihnen den Kontext des Gesprächs verständlich zu machen.
-      Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt.
+      Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt, d. h. ob Sie diese in Ihrem Alltag als akzeptabel empfinden würden oder nicht.
       Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache.
       <br>
       <br>
@@ -62,8 +62,8 @@
 
       <br>
       
-      Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte sehr wahrscheinlich so in der
-      gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen.
+      Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und stellt eine gewöhnliche Aussage im
+      gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen dar.
       Daher wäre eine solche Aussage mit <b> 1 (völlig akzeptabel) </b> zu bewerten.
 
 
@@ -90,8 +90,8 @@
 
       <br>
       
-      Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde sehr unwahrscheinlich so in der gesprochenen
-      Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin nicht vorkommen. Daher wäre eine solche
+      Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde nicht in der
+      Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin vorkommen. Daher wäre eine solche
       Aussage mit <b> 7 (völlig inakzeptabel) </b> zu bewerten.
 
 
@@ -129,9 +129,6 @@
       Bitte bewerten Sie die Aussagen von B nach Ihrem intuitiven Gefühl als Muttersprachler:in.
       <br>
       <br>
-      In der Studie werden Ihnen die Dialoge entweder als Text oder als Audioaufnahme präsentiert.
-      <br>
-      <br>
       Nachdem Sie auf "Weiter" klicken, beginnt die Studie.
     </InstructionScreen>
     
@@ -150,6 +147,7 @@
             <b> Ihre Bewertung</b>
             <br>
             <br>
+            In der Studie werden Ihnen die Dialoge als Audioaufnahme präsentiert.
             Bitte klicken Sie auf "Start", um den Dialog abspielen zu lassen. 
             <br>
             Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
@@ -181,6 +179,7 @@
             <b> Ihre Bewertung</b>
             <br>
             <br>
+            In der Studie werden Ihnen die Dialoge entweder als Text präsentiert.
             Bitte lesen Sie sich den Dialog durch. 
             <br>
             Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
