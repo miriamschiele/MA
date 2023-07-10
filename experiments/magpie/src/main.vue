@@ -180,6 +180,7 @@
             <br>
             <br>
             In der Studie werden Ihnen die Dialoge entweder als Text präsentiert.
+            Großbuchstaben stellen dar, welche Wörter von den Sprecher:innen betont werden.
             Bitte lesen Sie sich den Dialog durch. 
             <br>
             Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
