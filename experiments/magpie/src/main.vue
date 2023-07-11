@@ -141,7 +141,7 @@
           stimuli: audioName(audioFile),
           modality: 'auditory'
         }" />
-            {{ selectedIndex + 1 }}
+            <SliderScreen :key="index" :progress= "index + 1" />
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -154,7 +154,7 @@
             <button @click="$refs.audio[0].play()">Start</button>
             <button @click="$refs.audio[0].pause()">Stop</button>
             <audio ref="audio" :src="audioFile" />
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'"
+            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'"
               :response.sync="$magpie.measurements.answer"/>
             <button
             @click="goToNextSlide">Next slide</button>
@@ -173,7 +173,7 @@
           stimuli: sentence[1] + ',' + sentence[2],
           modality: 'written'
         }" />
-        {{ selectedIndex + 1 }}
+            <SliderScreen :key="index" :progress= "index + 1" />
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -188,7 +188,7 @@
             <br>
             {{ sentence[3] }}
             <br>
-            <RatingInput quid="Quelle" :right="'völlig inakzeptabel'" :left="'völlig akzeptabel'" 
+            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
               :response.sync="$magpie.measurements.answer"/>
               <button
               @click="goToNextSlide">Next slide</button>
