@@ -19,7 +19,7 @@
       Sie können auf einer Skala von <b> 1 (völlig inakzeptabel) </b> bis <b> 7 (völlig akzeptabel) </b> bewerten, für wie akzeptabel sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden, d. h. wie natürlich Ihnen diese Aussage vorkommt. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
       <br>
       <br>
-      Das Bearbeiten des Fragebogens wird etwa 5 Minuten in Anspruch nehmen.
+      Das Bearbeiten des Fragebogens wird etwa 10 Minuten in Anspruch nehmen.
       <br>
       <br>
       <br>
