@@ -16,8 +16,7 @@
       Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache.
       <br>
       <br>
-      Sie können auf einer Skala von <b> 1 (völlig akzeptabel) </b> bis <b> 7 (völlig inakzeptabel) </b> bewerten, wie
-      natürlich Sie die präsentierten Aussagen der Sprecherin B finden.
+      Sie können auf einer Skala von <b> 1 (völlig inakzeptabel) </b> bis <b> 7 (völlig akzeptabel) </b> bewerten, für wie akzeptabel sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden, d. h. wie natürlich Ihnen diese Aussage vorkommt. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
       <br>
       <br>
       Das Bearbeiten des Fragebogens wird etwa 5 Minuten in Anspruch nehmen.
@@ -62,9 +61,8 @@
 
       <br>
       
-      Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und stellt eine gewöhnliche Aussage im
-      gesprochenen Sprache im Alltag zwischen Muttersprachler:innen vorkommen dar.
-      Daher wäre eine solche Aussage mit <b> 1 (völlig akzeptabel) </b> zu bewerten.
+      Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte in der Alltagssprache zwischen Muttersprachler:innen vorkommen.
+      Daher wäre eine solche Aussage mit <b> 7 (völlig akzeptabel) </b> zu bewerten.
 
 
 
@@ -91,8 +89,8 @@
       <br>
       
       Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde nicht in der
-      Sprache im Alltag eines Muttersprachlers oder einer Muttersprachlerin vorkommen. Daher wäre eine solche
-      Aussage mit <b> 7 (völlig inakzeptabel) </b> zu bewerten.
+      Alltagssprache eines Muttersprachlers oder einer Muttersprachlerin vorkommen. Daher wäre eine solche
+      Aussage mit <b> 1 (völlig inakzeptabel) </b> zu bewerten.
 
 
 
@@ -179,7 +177,7 @@
             <b> Ihre Bewertung</b>
             <br>
             <br>
-            In der Studie werden Ihnen die Dialoge entweder als Text präsentiert.
+            In der Studie werden Ihnen die Dialoge als Text präsentiert.
             Großbuchstaben stellen dar, welche Wörter von den Sprecher:innen betont werden.
             Bitte lesen Sie sich den Dialog durch. 
             <br>
