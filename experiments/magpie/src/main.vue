@@ -135,13 +135,13 @@
         minLength: $magpie.v.minLength(5),
         required: $magpie.v.required
       }
-    }">
+    }" :progress= "selectedIndex  / audioFileNames.length">
           <Slide>
             <Record :data="{
           stimuli: audioName(audioFile),
           modality: 'auditory'
         }" />
-            <SliderScreen :key="index" :progress= "index + 1" />
+            
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -150,14 +150,17 @@
             <br>
             Wie natürlich wirkt die Aussage der Sprecherin B auf Sie?
             <br>
-            <br />
+            <br/>
             <button @click="$refs.audio[0].play()">Start</button>
             <button @click="$refs.audio[0].pause()">Stop</button>
-            <audio ref="audio" :src="audioFile" />
-            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'"
-              :response.sync="$magpie.measurements.answer"/>
-            <button
-            @click="goToNextSlide">Next slide</button>
+            <audio ref="audio" :src="audioFile" @ended="audioEnded" />
+            <div v-if="audioPlayed">
+            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
+              :response.sync="$magpie.validateMeasurements.response" />
+              <button v-if="aduioPlayed && !$magpie.validateMeasurements.response.$invalid" 
+              @click="goToNextSlide">Weiter</button>
+              <button v-else disabled>Bitte geben Sie eine Bewerung ab.</button>
+            </div>
           </Slide>
           </Screen>
 
@@ -166,14 +169,14 @@
         minLength: $magpie.v.minLength(5),
         required: $magpie.v.required
       }
-    }">
+    }" :progress= "selectedIndex/ sentences.length">
           
           <Slide>
             <Record :data="{
           stimuli: sentence[1] + ',' + sentence[2],
           modality: 'written'
         }" />
-            <SliderScreen :key="index" :progress= "index + 1" />
+           
             <b> Ihre Bewertung</b>
             <br>
             <br>
@@ -189,10 +192,10 @@
             {{ sentence[3] }}
             <br>
             <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
-              :response.sync="$magpie.measurements.answer"/>
-              <button
-              @click="goToNextSlide">Next slide</button>
-
+              :response.sync="$magpie.validateMeasurements.response"/>
+              <button v-if="!$magpie.validateMeasurements.response.$invalid" 
+              @click="goToNextSlide">Weiter</button>
+              <button v-else disabled>Bitte geben Sie eine Bewertung ab.</button>
           </Slide>
           </Screen>
 
@@ -313,7 +316,7 @@ var stimuli = _.shuffle(['written', 'auditory'])[0]
 
 
 export default {
-  methods: {
+    methods: {
     chooseQuestion: function () {
       return this.random;
     },
@@ -327,9 +330,16 @@ export default {
         $magpie.saveAndNextScreen()
         return; // Wrap around to the first item if at the end
     },
-    audioName(name) {
-      return name.split('-')[0].split('/media/')[1]
-    }
+    startAudio() {
+      this.$refs.audio.play();
+      this.audioPlayed = true;
+    },
+    stopAudio() {
+      this.$refs.audio.pause();
+    },
+    audioEnded() {
+      this.audioPlayed = false;
+    },
   },
   name: 'Main',
   data() {
