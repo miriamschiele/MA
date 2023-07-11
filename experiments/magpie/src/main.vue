@@ -12,11 +12,11 @@
       <br>
       <br>
       Die Aussage des Sprechers A dient lediglich dazu, Ihnen den Kontext des Gesprächs verständlich zu machen.
-      Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt, d. h. ob Sie diese in Ihrem Alltag als akzeptabel empfinden würden oder nicht.
+      Bitte bewerten Sie nur jeweils die Aussage der Sprecherin B danach, wie natürlich diese Aussage auf Sie wirkt.
       Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache.
       <br>
       <br>
-      Sie können auf einer Skala von <b> 1 (völlig unnatürlich) </b> bis <b> 7 (völlig natürlich) </b> bewerten, für wie natürlich sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
+      Sie können auf einer Skala von <b> 1 (völlig unnatürlich) </b> bis <b> 7 (völlig natürlich) </b> bewerten, wie natürlich sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
       <br>
       <br>
       Das Bearbeiten des Fragebogens wird etwa 10 Minuten in Anspruch nehmen.
