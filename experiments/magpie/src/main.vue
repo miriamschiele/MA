@@ -138,8 +138,8 @@
     }" :progress= "selectedIndex  / audioFileNames.length">
           <Slide>
             <Record :data="{
-          trial_type: audioName(audioFile)[0],
-          fragmentType:  audioName(audioFile)[-2],
+          trial_type: audioName(audioFile)[0] == 'C'? 'Critical' : 'Filler',
+          fragmentType_Acceptability:  audioName(audioFile)[-2],
           emphasis: audioName(audioFile)[2] == 'O'? 'with' : 'without',
           modality: 'auditory'
         }" />
@@ -175,7 +175,7 @@
           
           <Slide>
             <Record :data="{
-          fragmentType: sentence[2],
+          fragmentType_Acceptability: sentence[2],
           trial_type: sentence[1] === 'Filler' ? 'Filler': 'Critical',
           emphasis: sentence[1]=== 'W' ? 'with' : 'without',
           modality: 'written'
