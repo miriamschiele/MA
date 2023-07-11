@@ -138,7 +138,9 @@
     }" :progress= "selectedIndex  / audioFileNames.length">
           <Slide>
             <Record :data="{
-          stimuli: audioName(audioFile),
+          trial_type: audioName(audioFile)[0],
+          fragmentType:  audioName(audioFile)[-2],
+          emphasis: audioName(audioFile)[2] == 'O'? 'with' : 'without',
           modality: 'auditory'
         }" />
             
@@ -153,13 +155,13 @@
             <br/>
             <button @click="$refs.audio[0].play()">Start</button>
             <button @click="$refs.audio[0].pause()">Stop</button>
-            <audio ref="audio" :src="audioFile" @ended="audioEnded" />
+            <audio ref="audio" :src="audioFile" @ended="audioEnded()" />
             <div v-if="audioPlayed">
             <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
-              :response.sync="$magpie.validateMeasurements.response" />
-              <button v-if="aduioPlayed && !$magpie.validateMeasurements.response.$invalid" 
+              :response.sync="$magpie.measurements.response" />
+              <button v-if="$magpie.measurements.response" 
               @click="goToNextSlide">Weiter</button>
-              <button v-else disabled>Bitte geben Sie eine Bewerung ab.</button>
+              <span v-else>Bitte geben Sie eine Bewerung ab.</span>
             </div>
           </Slide>
           </Screen>
@@ -173,7 +175,9 @@
           
           <Slide>
             <Record :data="{
-          stimuli: sentence[1] + ',' + sentence[2],
+          fragmentType: sentence[2],
+          trial_type: sentence[1] === 'Filler' ? 'Filler': 'Critical',
+          emphasis: sentence[1]=== 'W' ? 'with' : 'without',
           modality: 'written'
         }" />
            
@@ -192,10 +196,10 @@
             {{ sentence[3] }}
             <br>
             <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
-              :response.sync="$magpie.validateMeasurements.response"/>
-              <button v-if="!$magpie.validateMeasurements.response.$invalid" 
+              :response.sync="$magpie.measurements.response"/>
+              <button v-if="$magpie.measurements.response" 
               @click="goToNextSlide">Weiter</button>
-              <button v-else disabled>Bitte geben Sie eine Bewertung ab.</button>
+              <span v-else>Bitte geben Sie eine Bewertung ab.</span>
           </Slide>
           </Screen>
 
@@ -328,18 +332,21 @@ export default {
     goToNextSlide() {
         this.selectedIndex++;
         $magpie.saveAndNextScreen()
+        this.audioPlayed = false;
         return; // Wrap around to the first item if at the end
     },
     startAudio() {
       this.$refs.audio.play();
-      this.audioPlayed = true;
     },
     stopAudio() {
       this.$refs.audio.pause();
     },
     audioEnded() {
-      this.audioPlayed = false;
+      this.audioPlayed = true;
     },
+    audioName(name) {
+      return name.split('-')[0].split('/media/')[1]
+    }
   },
   name: 'Main',
   data() {
@@ -349,7 +356,8 @@ export default {
       disableButton: true,
       sentences: sentences,
       audioFileNames: audioFileNames,
-      selectedIndex: 0
+      selectedIndex: 0,
+      audioPlayed: false
     };
   },
   computed: {
