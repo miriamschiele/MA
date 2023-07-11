@@ -195,7 +195,7 @@
             <br>
             {{ sentence[3] }}
             <br>
-            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
+            <RatingInput quid="Quelle" :right="'völlig natürlich'" :left="'völlig unnatürlich'" 
               :response.sync="$magpie.measurements.response"/>
               <button v-if="$magpie.measurements.response" 
               @click="goToNextSlide">Weiter</button>
