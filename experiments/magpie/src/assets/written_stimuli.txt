@@ -42,7 +42,7 @@ A: Peter ist VOR seinem Einkauf noch zur Bank gegangen.;W;F;
 B: Nein, NACH seinem Einkauf.;;;
 A: Peter hat seinem Bruder ein Buch geschenkt.;WO;L;
 B: Nein, seinem Vater.;;;
-A: Peter hat dem Polizisten seinen WAusweis gezeigt.;WO;L;
+A: Peter hat dem Polizisten seinen Ausweis gezeigt.;WO;L;
 B: Nein, dem Türsteher.;;;
 A: Peter hat seinem Chef den neuen Mitarbeiter vorgestellt.;WO;L;
 B: Nein, seinem Kollegen.;;;
