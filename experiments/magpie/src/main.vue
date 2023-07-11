@@ -16,7 +16,7 @@
       Denken Sie bitte dabei nicht unbedingt an geschriebene Sprache, sondern an übliche Umgangssprache.
       <br>
       <br>
-      Sie können auf einer Skala von <b> 1 (völlig inakzeptabel) </b> bis <b> 7 (völlig akzeptabel) </b> bewerten, für wie akzeptabel sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden, d. h. wie natürlich Ihnen diese Aussage vorkommt. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
+      Sie können auf einer Skala von <b> 1 (völlig unnatürlich) </b> bis <b> 7 (völlig natürlich) </b> bewerten, für wie natürlich sie eine solche Aussage in der Alltagssprache zwischen Muttersprachler:innen finden. Orientieren Sie sich dabei bitte an Ihrem intuitiven Sprachgefühl.
       <br>
       <br>
       Das Bearbeiten des Fragebogens wird etwa 10 Minuten in Anspruch nehmen.
@@ -62,7 +62,7 @@
       <br>
       
       Diese Aussage von B entspricht den grammatikalischen Regeln des Deutschen und könnte in der Alltagssprache zwischen Muttersprachler:innen vorkommen.
-      Daher wäre eine solche Aussage mit <b> 7 (völlig akzeptabel) </b> zu bewerten.
+      Daher wäre eine solche Aussage mit <b> 7 (völlig natürlich) </b> zu bewerten.
 
 
 
@@ -90,7 +90,7 @@
       
       Diese Aussage von B entspricht nicht den Regeln des Deutschen und würde nicht in der
       Alltagssprache eines Muttersprachlers oder einer Muttersprachlerin vorkommen. Daher wäre eine solche
-      Aussage mit <b> 1 (völlig inakzeptabel) </b> zu bewerten.
+      Aussage mit <b> 1 (völlig unnatürlich) </b> zu bewerten.
 
 
 
@@ -119,8 +119,8 @@
 
       Diese Aussage von B ist zwar kein wohlgeformter Satz des Deutschen, aber würde im Alltag eines Muttersprachlers oder
       einer Muttersprachlerin vermutlich dennoch verstanden werden.
-      Diese Aussage wäre somit -je nach ihrer eigenen Einschätzung- als <b> 3, 4 oder 5 (weder akzeptabel noch
-        inakzeptabel) </b> zu bewerten.
+      Diese Aussage wäre somit -je nach ihrer eigenen Einschätzung- als <b> 3, 4 oder 5 (weder unnatürlich noch
+        natürlich) </b> zu bewerten.
       <br>
       <br>
       Die Beispiele sollen Ihnen lediglich einen Überblick über mögliche Dialoge geben.
@@ -157,7 +157,7 @@
             <button @click="$refs.audio[0].pause()">Stop</button>
             <audio ref="audio" :src="audioFile" @ended="audioEnded()" />
             <div v-if="audioPlayed">
-            <RatingInput quid="Quelle" :right="'völlig akzeptabel'" :left="'völlig inakzeptabel'" 
+            <RatingInput quid="Quelle" :right="'völlig natürlich'" :left="'völlig unnatürlich'" 
               :response.sync="$magpie.measurements.response" />
               <button v-if="$magpie.measurements.response" 
               @click="goToNextSlide">Weiter</button>
