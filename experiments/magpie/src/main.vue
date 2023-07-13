@@ -141,7 +141,8 @@
           fragmentType_Acceptability: audioName(audioFile).slice(-2)[0],
           trial_type: audioName(audioFile)[0] === 'C'? 'Critical' : 'Filler',
           emphasis: audioName(audioFile)[2] === 'O'? 'without' : 'with',
-          modality: 'auditory'
+          modality: 'auditory',
+          trial_number: selectedIndex + 1
         }" />
             
             <b> Ihre Bewertung</b>
@@ -178,7 +179,8 @@
           fragmentType_Acceptability: sentence[2],
           trial_type: sentence[1] === 'Filler' ? 'Filler': 'Critical',
           emphasis: sentence[1]=== 'W' ? 'with' : 'without',
-          modality: 'written'
+          modality: 'written',
+          trial_number: selectedIndex + 1
         }" />
            
             <b> Ihre Bewertung</b>
