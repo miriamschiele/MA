@@ -7,6 +7,7 @@ library("ggplot2")
 library("Rmisc")
 library("lme4")
 library("lmerTest")
+library("emmeans")
 
 # read in data
 dat <- read.csv("results_3_MA+study+on+fragments_MS.csv", sep=",", header=TRUE) 
@@ -46,6 +47,10 @@ colnames(fillerDat)[colnames(fillerDat) == "fragmentType_Acceptability"] = "Acce
 dat <- dat[dat$trial_type == "Critical",]
 # rename column with fragment type 
 colnames(dat)[colnames(dat) == "fragmentType_Acceptability"] = "fragment_type"
+
+#delete the following two lines after pilot study (because then trial number is added)
+trial_number = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28)
+dat$trial_number = trial_number
 
 nrow(dat)
 #
@@ -188,7 +193,9 @@ sumStatsFrag %>%
   geom_errorbar(aes(ymin = response-ci, ymax = response+ci), width = 0.1)+
   ylim(1,7)
 
+
 # Hypotheses testing
+
 
 # first hypothesis
 # Stimuli with emphasis receive higher acceptability ratings than stimuli without emphasis
@@ -198,9 +205,12 @@ modelemp <- lmer(data=dat, response ~ emphasis + (1|submission_id))
 summary(modelemp)
 # p value = 0.154
 
-# include trial number in csv output file and items in linear mixed model 
-modelemp2 <- lmer(data=dat, response ~ emphasis + (1|submission_id) + (1|item))
-summary(modelemp)
+# include variance between items
+modelemp2 <- lmer(data=dat, response ~ emphasis + (1|submission_id) + (1|trial_number))
+summary(modelemp2)
+# p value = 0.172
+
+emmeans(modelemp2, pairwise ~ emphasis)
 
 
 # second hypothesis
@@ -211,6 +221,12 @@ modelmod <- lmer(data=dat, response ~ modality + (1|submission_id))
 summary(modelmod)
 # p value = 0.2293
 
+# include variance between items
+modelmod2 <- lmer(data=dat, response ~ modality + (1|submission_id) + (1|trial_number))
+summary(modelmod2)
+# p value = 0.22925
+
+
 # third hypothesis
 # Stimuli with lexical fragments receive higher acceptability ratings than stimuli with functional fragments
 # tested by linear mixed model
@@ -218,4 +234,9 @@ summary(modelmod)
 modelfrag <- lmer(data=dat, response ~ fragment_type + (1|submission_id))
 summary(modelfrag)
 # p value = 0.543
+
+# include variance between items
+modelfrag2 <- lmer(data=dat, response ~ fragment_type + (1|submission_id) + (1|trial_number))
+summary(modelfrag2)
+# p value = 0.523
 
