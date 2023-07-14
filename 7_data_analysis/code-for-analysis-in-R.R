@@ -17,35 +17,43 @@ all.dat <- read.csv("dat_pilot_study.csv", sep=";", header=TRUE)
 # information about participants 
 # age
 min(all.dat$age, na.rm=T)
-# 24 in pilot study
+# 22 in pilot study
 max(all.dat$age, na.rm=T)
 # 54 in pilot study
 mean(all.dat$age, na.rm=T)
-# 30.2 in pilot study
+# 26.9 in pilot study
 
 # gender
 table(all.dat$gender)/56 #divided by 56 because every participants had 56 trials
 # männlich  weiblich
-# 2         4
+# 2         9
 # in pilot study
 
 # education
 table(all.dat$education) /56 #divided by 56 because every participants had 56 trials
-# Abitur    Bachelor    kein Abitur 
-# 2         3           1 
+#höherer Abschluss    Abitur             Bachelor          kein Abitur 
+#1                    3                    6                    1 
+# in pilot study
+
+# number of participants in each between-subject condition, i.e., written and auditory
+table(all.dat$modality)  /56
+# auditory  written 
+# 2         9
 # in pilot study
 
 nrow(all.dat)
-# 336
+# 616 in pilot study
 
 # participants' comments on study
-dat %>% pull(comments) %>% unique()
+all.dat %>% pull(comments) %>% unique()
 
 # data sorting and cleaning
+
+nrow(all.dat.clean)
+# 560 in pilot study
+
 # put all filler items in a seperate data set
 fillerDat <- all.dat[all.dat$trial_type == "Filler",]
-nrow(fillerDat)
-# 168 in pilot study
 
 # rename column in filler dataset to varying acceptabiltiy of filler stimuli (A-E)
 colnames(fillerDat)[colnames(fillerDat) == "fragmentType_Acceptability"] = "acceptability"
@@ -54,16 +62,10 @@ colnames(fillerDat)[colnames(fillerDat) == "fragmentType_Acceptability"] = "acce
 dat <- all.dat[all.dat$trial_type == "Critical",]
 # rename column with fragment type 
 colnames(dat)[colnames(dat) == "fragmentType_Acceptability"] = "fragment_type"
-nrow(dat)
-# 168 in pilot study
+
 nrow(dat) == nrow(fillerDat)
 # TRUE
 
-# number of participants in each between-subject condition, i.e., written and auditory
-table(all.dat$modality)  /56
-# auditory  written 
-# 2        4
-# in pilot study
 
 
 # -------------------- Data plotting --------------------
@@ -158,12 +160,6 @@ dat %>%
   scale_y_continuous(breaks=c(1:7))
 
 
-# differences in responses depending on emphasis, modality, and fragment type
-dat %>% 
-  group_by(emphasis, modality, fragment_type) %>%
-  summarize(mean = mean(as.numeric(response)),
-            SD = sd(as.numeric(response)))
-
 # including means and standard deviation
 
 # emphasis
@@ -203,7 +199,7 @@ sumStatsFrag %>%
 # all factors included
 sumStats <- summarySE(dat, measurevar ="response", 
                       groupvars = c("emphasis", "modality", "fragment_type"))
-sumStats$ci <- sumStatsEmp$ci 
+sumStats$ci <- sumStatsMod$ci 
 #choosing one of the ci columns to ensure consistency when specifying ymin and ymax
 sumStats %>%
   ggplot(aes(x= emphasis, y = as.numeric(response))) +
