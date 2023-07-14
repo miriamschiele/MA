@@ -1,0 +1,337 @@
+submission_id;age;comments;education;emphasis;experiment_duration;experiment_end_time;experiment_start_time;fragmentType_Acceptability;gender;languages;modality;response;responseTime;trial_number;trial_type
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;68878;1;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;13026;2;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;6631;3;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;8055;4;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;14217;5;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;E;weiblich;deutsch;written;2;10825;6;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;4;19132;7;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;23664;8;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;2;12416;9;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;7775;10;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;7784;11;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;7832;12;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;9099;13;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;20335;14;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;2;10912;15;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;6;9305;16;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;A;weiblich;deutsch;written;7;9372;17;Filler
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;7799;18;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;5;18364686;19;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;5;16347;20;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;7132;21;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;4;14410;22;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;E;weiblich;deutsch;written;1;18654;23;Filler
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;5924;24;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;5208;25;Critical
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;7665;26;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;1;12884;27;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;A;weiblich;deutsch;written;3;7389;28;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;E;weiblich;deutsch;written;1;6865;29;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;1;11668;30;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;2;8456;31;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;5238;32;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;6750;33;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;1;6906;34;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;10970;35;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;1;11530;36;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;A;weiblich;deutsch;written;7;9514;37;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;E;weiblich;deutsch;written;1;10362;38;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;4904;39;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;2;7824;40;Filler
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;4874;41;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;A;weiblich;deutsch;written;7;5076;42;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;A;weiblich;deutsch;written;7;5168;43;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;5496;44;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;6;14120;45;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;7;10112;46;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;13469;47;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;2;21206;48;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;7;6672;49;Filler
+10;24;;Bachelor;with;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;3;5986;50;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;L;weiblich;deutsch;written;7;9085;51;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;F;weiblich;deutsch;written;7;6982;52;Critical
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;E;weiblich;deutsch;written;1;5778;53;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;B;weiblich;deutsch;written;4;7046;54;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;D;weiblich;deutsch;written;1;5106;55;Filler
+10;24;;Bachelor;without;24590972;1,68926E+12;1,68924E+12;C;weiblich;deutsch;written;2;10154;56;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;A;weiblich;Deutsch;written;7;21207;1;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;13403;2;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;5333;3;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;10996;4;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;6;10406;5;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;2;20490;6;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;A;weiblich;Deutsch;written;7;9433;7;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;9173;8;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;5;24874;9;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;13548;10;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;5;11230;11;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;2;12895;12;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;20492;13;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;7647;14;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;A;weiblich;Deutsch;written;7;10495;15;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;5693;16;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;3;41957;17;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;E;weiblich;Deutsch;written;1;8490;18;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;2;6859;19;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;5;9825;20;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;7;13844;21;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;E;weiblich;Deutsch;written;1;9177;22;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;A;weiblich;Deutsch;written;7;5950;23;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;7703;24;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;A;weiblich;Deutsch;written;7;16144;25;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;7519;26;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;E;weiblich;Deutsch;written;1;12430;27;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;4;11859;28;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;5004;29;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;6363;30;Critical
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;4491;31;Critical
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;3919;32;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;4527;33;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;6667;34;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;2;10338;35;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;2;6421;36;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;7;3970;37;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;5988;38;Critical
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;44640;39;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;B;weiblich;Deutsch;written;6;7241;40;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;E;weiblich;Deutsch;written;1;4216;41;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;1;8306;42;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;4416;43;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;3550;44;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;2;4119;45;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;3706;46;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;C;weiblich;Deutsch;written;2;12882;47;Filler
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;9136;48;Critical
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;7881;49;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;E;weiblich;Deutsch;written;1;4766;50;Filler
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;3978;51;Critical
+11;24;;Bachelor;with;675080;1,68927E+12;1,68927E+12;F;weiblich;Deutsch;written;7;3712;52;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;5208;53;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;3986;54;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;L;weiblich;Deutsch;written;7;3077;55;Critical
+11;24;;Bachelor;without;675080;1,68927E+12;1,68927E+12;D;weiblich;Deutsch;written;7;5792;56;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;28383;1;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;1;12133;2;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;A;weiblich;deutsch;auditory;7;8666;3;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;2;12550;4;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9499;5;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;2;11283;6;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;9550;7;Critical
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;8698;8;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9283;9;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;2;27782;10;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7767;11;Critical
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9150;12;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;8649;13;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;9167;14;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9115;15;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;3;9617;16;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;8265;17;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;8016;18;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;A;weiblich;deutsch;auditory;5;8501;19;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;7065;20;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;3;11099;21;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;E;weiblich;deutsch;auditory;3;8683;22;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;E;weiblich;deutsch;auditory;3;10066;23;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;A;weiblich;deutsch;auditory;7;7300;24;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;6;12282;25;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;7;10950;26;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7901;27;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;6;12182;28;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;7434;29;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;6;11932;30;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9183;31;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;6;9216;32;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7584;33;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;B;weiblich;deutsch;auditory;5;9498;34;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;8166;35;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;E;weiblich;deutsch;auditory;2;10984;36;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7982;37;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;8549;38;Critical
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;8551;39;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;A;weiblich;deutsch;auditory;7;8184;40;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;E;weiblich;deutsch;auditory;6;7699;41;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;8133;42;Critical
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7182;43;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;2;10817;44;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7549;45;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;4;10217;46;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;9082;47;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;E;weiblich;deutsch;auditory;3;10734;48;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;A;weiblich;deutsch;auditory;7;6532;49;Filler
+6;24;;Abitur;without;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;7816;50;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;2;10084;51;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;2;7683;52;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;F;weiblich;deutsch;auditory;7;8750;53;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;L;weiblich;deutsch;auditory;7;7965;54;Critical
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;D;weiblich;deutsch;auditory;3;9716;55;Filler
+6;24;;Abitur;with;632650;1,68924E+12;1,68924E+12;C;weiblich;deutsch;auditory;1;11000;56;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;5;31473;1;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;E;weiblich;Deutsch;written;2;24869;2;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;6;19509;3;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;11349;4;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;2;7560;5;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;4;21726;6;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;6;23325;7;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;E;weiblich;Deutsch;written;3;14788;8;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;13034;9;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;6;17513;10;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;6;25783;11;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;3;9656;12;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;7;15054;13;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;A;weiblich;Deutsch;written;7;8470;14;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;A;weiblich;Deutsch;written;7;8532;15;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;6;10122;16;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;5;11926;17;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;2;20024;18;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;4;20692;19;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;6;19841;20;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;7;14044;21;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;3;13915;22;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;E;weiblich;Deutsch;written;2;11191;23;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;15857;24;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;15691;25;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;13657;26;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;A;weiblich;Deutsch;written;7;6003;27;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;11602;28;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;E;weiblich;Deutsch;written;2;11444;29;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;5;15884;30;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;6308;31;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;5;19940;32;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;E;weiblich;Deutsch;written;2;7499;33;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;10745;34;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;10170;35;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;A;weiblich;Deutsch;written;7;8417;36;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;9327;37;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;4;14519;38;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;2;18999;39;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;7;19989;40;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;6;21810;41;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;C;weiblich;Deutsch;written;7;27553;42;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;15921;43;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;A;weiblich;Deutsch;written;7;7298;44;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;15697;45;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;7720;46;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;6;28115;47;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;4;10833;48;Filler
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;8280;49;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;B;weiblich;Deutsch;written;7;19868;50;Filler
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;11970;51;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;7;10455;52;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;6;13105;53;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;L;weiblich;Deutsch;written;6;15557;54;Critical
+7;54;;kein Abitur;with;900750;1,68924E+12;1,68924E+12;F;weiblich;Deutsch;written;7;7772;55;Critical
+7;54;;kein Abitur;without;900750;1,68924E+12;1,68924E+12;D;weiblich;Deutsch;written;3;19023;56;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;26412;1;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;4;14518;2;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;12032;3;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;A;männlich;Deutsch;written;5;32300;4;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;4;29755;5;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;6;9419;6;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;3;15675;7;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;6;9233;8;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;13758;9;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;A;männlich;Deutsch;written;3;12887;10;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;5;21176;11;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;13851;12;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;14687;13;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;3;19467;14;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;E;männlich;Deutsch;written;3;9912;15;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;6;7547;16;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;E;männlich;Deutsch;written;3;10124;17;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;6408;18;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;6;20683;19;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;12120;20;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;2;9973;21;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;13314;22;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;5;22731;23;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;6;3620;24;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;17636;25;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;15139;26;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;A;männlich;Deutsch;written;6;8600;27;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;4;8316;28;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;2;6955;29;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;8448;30;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;163706;31;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;E;männlich;Deutsch;written;5;5280;32;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;6;7043;33;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;3;15368;34;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;5;9083;35;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;E;männlich;Deutsch;written;2;10608;36;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;3999;37;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;7;12192;38;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;5;13099;39;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;7292;40;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;C;männlich;Deutsch;written;1;46055;41;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;7819;42;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;7;8116;43;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;E;männlich;Deutsch;written;2;23259;44;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;7;10499;45;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;D;männlich;Deutsch;written;3;15969;46;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;A;männlich;Deutsch;written;7;4771;47;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;14828;48;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;4287;49;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;A;männlich;Deutsch;written;7;9533;50;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;5930;51;Critical
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;6790;52;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;5;20361;53;Filler
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;F;männlich;Deutsch;written;7;17196;54;Critical
+8;;;Abitur;without;1145592;1,68924E+12;1,68924E+12;B;männlich;Deutsch;written;3;8012;55;Filler
+8;;;Abitur;with;1145592;1,68924E+12;1,68924E+12;L;männlich;Deutsch;written;7;11571;56;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;2;39060;1;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;5;27365;2;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;2;20993;3;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;2;20100;4;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;7;19700;5;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;10168;6;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;6;16901;7;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;3;14183;8;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;13134;9;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;1;10432;10;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;1;11549;11;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;2;18182;12;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;6;22583;13;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;9149;14;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;10850;15;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;22867;16;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;5;9032;17;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;11734;18;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;9119;19;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;E;männlich;Deutsch;auditory;3;11550;20;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;12906;21;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;10709;22;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;6;11151;23;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;10833;24;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;12271;25;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;1;16384;26;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;9700;27;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;E;männlich;Deutsch;auditory;2;10600;28;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;A;männlich;Deutsch;auditory;6;9966;29;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;9251;30;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;5;11868;31;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;A;männlich;Deutsch;auditory;7;8810;32;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;E;männlich;Deutsch;auditory;2;10288;33;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;5;12601;34;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;12316;35;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;9017;36;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;8301;37;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;2;10369;38;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;1;11314;39;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;4;9586;40;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;A;männlich;Deutsch;auditory;6;11098;41;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;7;9419;42;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;B;männlich;Deutsch;auditory;6;12450;43;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;A;männlich;Deutsch;auditory;7;7667;44;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;A;männlich;Deutsch;auditory;5;9349;45;Filler
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;7;10486;46;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;1;12614;47;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;2;15385;48;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;5;17585;49;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;14933;50;Critical
+9;25;hdgdl Miri :);Bachelor;without;858401;1,68926E+12;1,68925E+12;F;männlich;Deutsch;auditory;7;18218;51;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;D;männlich;Deutsch;auditory;4;17452;52;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;L;männlich;Deutsch;auditory;5;8150;53;Critical
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;E;männlich;Deutsch;auditory;1;10511;54;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;E;männlich;Deutsch;auditory;2;10587;55;Filler
+9;25;hdgdl Miri :);Bachelor;with;858401;1,68926E+12;1,68925E+12;C;männlich;Deutsch;auditory;2;13717;56;Filler
