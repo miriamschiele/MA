@@ -158,30 +158,11 @@ dat %>%
   scale_y_continuous(breaks=c(1:7))
 
 
-# differences in emphasis
+# differences in responses depending on emphasis, modality, and fragment type
 dat %>% 
-  group_by(emphasis) %>% 
-  summarize(
-    mean = mean(as.numeric(response)),
-    SD = sd(as.numeric(response))
-  )
-
-# differences in modality
-dat %>% 
-  group_by(modality) %>% 
-  summarize(
-    mean = mean(as.numeric(response)),
-    SD = sd(as.numeric(response))
-  )
-
-# differences in fragment type
-dat %>% 
-  group_by(fragment_type) %>% 
-  summarize(
-    mean = mean(as.numeric(response)),
-    SD = sd(as.numeric(response))
-  )
-
+  group_by(emphasis, modality, fragment_type) %>%
+  summarize(mean = mean(as.numeric(response)),
+            SD = sd(as.numeric(response)))
 
 # including means and standard deviation
 
