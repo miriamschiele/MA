@@ -31,8 +31,10 @@ table(all.dat$gender)/56 #divided by 56 because every participants had 56 trials
 
 # education
 table(all.dat$education) /56 #divided by 56 because every participants had 56 trials
-#höherer Abschluss    Abitur             Bachelor          kein Abitur 
-#1                    3                    6                    1 
+#H\xf6herer Abschluss     Abitur             Bachelor 
+#1                        3                    6 
+#kein Abitur 
+#1       
 # in pilot study
 
 # number of participants in each between-subject condition, i.e., written and auditory
@@ -48,9 +50,6 @@ nrow(all.dat)
 all.dat %>% pull(comments) %>% unique()
 
 # data sorting and cleaning
-
-nrow(all.dat.clean)
-# 560 in pilot study
 
 # put all filler items in a seperate data set
 fillerDat <- all.dat[all.dat$trial_type == "Filler",]
@@ -80,7 +79,7 @@ fillerDat %>%
                        labels = c("A (full acceptablity)", "B (partial acceptability)", 
                                   "C (neutrality in terms of acceptability)", 
                                   "D (partial unacceptability)", "E (full unacceptability)"))+
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # emphasis
 dat %>% 
@@ -88,7 +87,7 @@ dat %>%
   geom_jitter(height = 0) + 
   labs(title = "Perceived naturalness of stimuli with and wihtout emphasis",
        x = "emphasis", y = "perceived naturalness") +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # modality
 dat %>% 
@@ -96,7 +95,7 @@ dat %>%
   geom_jitter(height = 0) + 
   labs(title = "Perceived naturalness of auditory and written stimuli",
        x = "modality", y = "perceived naturalness") +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # fragment type
 dat %>% 
@@ -108,7 +107,7 @@ dat %>%
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical"))+
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # modality and emphasis in one graph
 dat %>% 
@@ -117,7 +116,7 @@ dat %>%
   labs(title = "Auditory and written stimuli with and without emphasis",
        x = "emphasis", y = "perceived naturalness") +
   facet_wrap(~modality) +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # emphasis and fragment type in one graph
 dat %>% 
@@ -130,7 +129,7 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   facet_grid(~emphasis) +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # modality and fragment type in one graph
 dat %>% 
@@ -143,7 +142,7 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                     labels = c("functional", "lexical")) +
   facet_grid(~modality) +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 # all factors in one graph
 dat %>% 
@@ -157,7 +156,7 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   facet_grid(emphasis~modality) +
-  scale_y_continuous(breaks=c(1:7))
+  scale_y_continuous(breaks=c(1:8))
 
 
 # including means and standard deviation
@@ -171,7 +170,7 @@ sumStatsEmp %>%
   labs(y="percevied naturalness")+
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,7)
+  ylim(1,8)
 
 # modality
 sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
@@ -181,7 +180,7 @@ sumStatsMod %>%
   labs(y="percevied naturalness")+
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,7)
+  ylim(1,8)
 
 # fragment type
 sumStatsFrag <- summarySE(dat, measurevar ="response", groupvars = "fragment_type")
@@ -194,7 +193,7 @@ sumStatsFrag %>%
                        labels = c("functional", "lexical")) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,7)
+  ylim(1,8)
 
 # all factors included
 sumStats <- summarySE(dat, measurevar ="response", 
@@ -206,7 +205,7 @@ sumStats %>%
   geom_point() +
   geom_errorbar(aes(ymin = as.numeric(response) - ci, 
                     ymax = as.numeric(response) + ci), width = 0.1) +
-  ylim(1, 7) +
+  ylim(1, 8) +
   facet_grid(fragment_type ~ modality) 
 
 
@@ -224,7 +223,7 @@ dat$responses_z <- responses_z
 # as by this method:
 modelemp <- lmer(data = dat, responses_z ~ emphasis + (1|submission_id))
 summary(modelemp)
-# p value = 0.268 in pilot study
+# p value = 0.000947 in pilot study
 # We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 
 # Second hypothesis
@@ -234,7 +233,7 @@ summary(modelemp)
 # as by this method:
 modelmod <- lmer(data=dat, responses_z ~ modality + (1|submission_id))
 summary(modelmod)
-# p value = 0.654 in pilot study
+# p value = 0.721 in pilot study
 # We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
 
 # Third hypothesis
@@ -244,5 +243,5 @@ summary(modelmod)
 # as by this method:
 modelfrag <- lmer(data=dat, responses_z ~ fragment_type + (1|submission_id))
 summary(modelfrag)
-# p value = 0.13 in pilot study
+# p value = 0.313 in pilot study
 # We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
