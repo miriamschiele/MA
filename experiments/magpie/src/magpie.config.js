@@ -6,6 +6,6 @@ export default {
   completionUrl: 'https://app.prolific.co/submissions/complete?cc=CZD6B65H',
   contactEmail: 'm.schiele12@gmail.com',
   // Either 'debug', 'directLink' or 'prolific'
-  mode: 'directLink',
+  mode: 'prolific',
   language: 'de'
 };
