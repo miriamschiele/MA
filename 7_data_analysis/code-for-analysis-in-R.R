@@ -10,6 +10,7 @@ library("lmerTest")
 library("emmeans")
 library("dplyr")
 library("aida")
+library("pwr")
 
 # read in data
 all.dat <- read.csv("dat_pilot_study.csv", sep=";", header=TRUE) 
@@ -245,3 +246,19 @@ modelfrag <- lmer(data=dat, responses_z ~ fragment_type + (1|submission_id))
 summary(modelfrag)
 # p value = 0.313 in pilot study
 # We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
+
+
+#-------------------- Power analysis --------------------
+# Set effect size, alpha, and power values (adjust as needed)
+effect_size <- 0.3  # Small effect size
+alpha <- 0.05       # Significance level (5%)
+power <- 0.80       # Desired power (80%)
+
+# Conduct power analysis
+sample_size <- pwr.t.test(d = effect_size, sig.level = alpha, power = power)
+
+# Display the required sample size
+cat("Required Sample Size per Group:", ceiling(sample_size$n), "\n")
+
+    
+    
