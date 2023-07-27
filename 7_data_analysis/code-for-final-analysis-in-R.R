@@ -13,36 +13,36 @@ library("pwr")
 library("aida")
 
 # read in data
-all.dat <- read.csv("first_7_VPs.csv", sep=",", header=TRUE) 
+all.dat <- read.csv("full_dataset_raw.csv", sep=",", header=TRUE) 
 
 # information about participants 
 # age
 min(all.dat$age, na.rm=T)
-# 21 
+# 19 
 max(all.dat$age, na.rm=T)
-# 36 
+# 73 
 mean(all.dat$age, na.rm=T)
-# 26.3
+# 35.2549
 
 # gender
 table(all.dat$gender)/56 #divided by 56 because every participants had 56 trials
-# männlich  weiblich
-# 5         2
+# divers  männlich  weiblich
+# 2       70         31
 
 # education
 table(all.dat$education) /56 #divided by 56 because every participants had 56 trials
 #H\xf6herer Abschluss     Abitur             Bachelor 
-#1                        3                 3
+#35                       30                 29
 #kein Abitur 
-#0       
+#9       
 
 # number of participants in each between-subject condition, i.e., written and auditory
 table(all.dat$modality)  /56
 # auditory  written 
-# 3         4
+# 58         45
 
 nrow(all.dat)
-# 392
+# 5768
 
 # participants' comments on study
 all.dat %>% pull(comments) %>% unique()
@@ -189,6 +189,7 @@ sumStats$ci <- sumStatsMod$ci
 sumStats %>%
   ggplot(aes(x= emphasis, y = as.numeric(response))) +
   geom_point() +
+  labs(y="percevied naturalness") +
   geom_errorbar(aes(ymin = as.numeric(response) - ci, 
                     ymax = as.numeric(response) + ci), width = 0.1) +
   ylim(1, 8) +
@@ -209,7 +210,7 @@ dat$responses_z <- responses_z
 # as by this method:
 modelemp <- lmer(data = dat, responses_z ~ emphasis + (1|submission_id))
 summary(modelemp)
-# p value = 0.0625
+# p value = 0.0.00951
 # We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 
 # Second hypothesis
@@ -219,7 +220,7 @@ summary(modelemp)
 # as by this method:
 modelmod <- lmer(data=dat, responses_z ~ modality + (1|submission_id))
 summary(modelmod)
-# p value = 0.256
+# p value = 0.00168
 # We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
 
 # Third hypothesis
@@ -229,7 +230,7 @@ summary(modelmod)
 # as by this method:
 modelfrag <- lmer(data=dat, responses_z ~ fragment_type + (1|submission_id))
 summary(modelfrag)
-# p value = 0.237 
+# p value = 0.00122
 # We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
 
 
