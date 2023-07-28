@@ -13,36 +13,41 @@ library("pwr")
 library("aida")
 
 # read in data
-all.dat <- read.csv("full_dataset_raw.csv", sep=",", header=TRUE) 
+all.dat <- read.csv("full_dataset_raw.csv", sep=";", header=TRUE) 
 
 # information about participants 
+
+# total number of participants
+nrow(all.dat) /56 #divided by 56 because every participants had 56 trials
+# 100
+
 # age
 min(all.dat$age, na.rm=T)
 # 19 
 max(all.dat$age, na.rm=T)
 # 73 
 mean(all.dat$age, na.rm=T)
-# 35.2549
+# 35.52525
 
 # gender
 table(all.dat$gender)/56 #divided by 56 because every participants had 56 trials
 # divers  männlich  weiblich
-# 2       70         31
+# 2       69         29
 
 # education
 table(all.dat$education) /56 #divided by 56 because every participants had 56 trials
 #H\xf6herer Abschluss     Abitur             Bachelor 
-#35                       30                 29
+#35                       29                 27
 #kein Abitur 
 #9       
 
 # number of participants in each between-subject condition, i.e., written and auditory
 table(all.dat$modality)  /56
 # auditory  written 
-# 58         45
+# 57         43
 
 nrow(all.dat)
-# 5768
+# 5600
 
 # participants' comments on study
 all.dat %>% pull(comments) %>% unique()
@@ -71,43 +76,63 @@ nrow(dat) == nrow(fillerDat)
 dat %>% 
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) +
   geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   labs(title = "Perceived naturalness of stimuli with and wihtout emphasis",
        x = "emphasis", y = "perceived naturalness") +
-  scale_y_continuous(breaks=c(1:8))
+    scale_y_continuous(breaks=c(1:7))
 
 # modality
 dat %>% 
   ggplot(aes(x = modality, y = as.numeric(response), color = modality)) +
   geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   labs(title = "Perceived naturalness of auditory and written stimuli",
        x = "modality", y = "perceived naturalness") +
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 # fragment type
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
   geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   labs(title = "Perceived naturalness of functional and lexical fragments",
     x = "fragment type", y = "perceived naturalness") +
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical"))+
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 # modality and emphasis in one graph
 dat %>% 
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) +
   geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   labs(title = "Auditory and written stimuli with and without emphasis",
        x = "emphasis", y = "perceived naturalness") +
   facet_wrap(~modality) +
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 # emphasis and fragment type in one graph
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_jitter(height = 0) + 
   labs(title = "Functional and lexical fragments with and without emphasis",
     x = "fragment type", y = "perceived naturalness", color = "fragment type") +
@@ -115,12 +140,16 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   facet_grid(~emphasis) +
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 # modality and fragment type in one graph
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_jitter(height = 0) + 
   labs(title = "Auditory and written stimuli with functional and lexical fragments",
     x = "fragment type", y = "perceived naturalness", color = "fragment type") +
@@ -128,13 +157,17 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                     labels = c("functional", "lexical")) +
   facet_grid(~modality) +
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 # all factors in one graph
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
   geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   labs(title = "Participants' ratings of all critical items",
        x = "fragment type", y = "perceived naturalness", 
        color = "fragment type") +
@@ -142,21 +175,24 @@ dat %>%
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   facet_grid(emphasis~modality) +
-  scale_y_continuous(breaks=c(1:8))
+  scale_y_continuous(breaks=c(1:7))
 
 
 # including means and standard deviation
 
 # emphasis
 sumStatsEmp <- summarySE(dat, measurevar ="response", groupvars = "emphasis")
-
 sumStatsEmp %>%
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) + 
   geom_point() +
   labs(y="percevied naturalness")+
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,8)
+  ylim(1,7)
 
 # modality
 sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
@@ -164,9 +200,13 @@ sumStatsMod %>%
   ggplot(aes(x = modality, y = as.numeric(response), color = modality)) + 
   geom_point() +
   labs(y="percevied naturalness")+
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,8)
+  ylim(1,7)
 
 # fragment type
 sumStatsFrag <- summarySE(dat, measurevar ="response", groupvars = "fragment_type")
@@ -174,12 +214,16 @@ sumStatsFrag %>%
   ggplot(aes(x = fragment_type, y = as.numeric(response), color = fragment_type)) + 
   geom_point() +
   labs(x="fragment type", y="percevied naturalness")+
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,8)
+  ylim(1,7)
 
 # all factors included
 sumStats <- summarySE(dat, measurevar ="response", 
@@ -187,13 +231,24 @@ sumStats <- summarySE(dat, measurevar ="response",
 sumStats$ci <- sumStatsMod$ci 
 #choosing one of the ci columns to ensure consistency when specifying ymin and ymax
 sumStats %>%
-  ggplot(aes(x= emphasis, y = as.numeric(response))) +
+  ggplot(aes(x= fragment_type, y = as.numeric(response))) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_point() +
-  labs(y="percevied naturalness") +
+  labs(y="percevied naturalness", x="fragment type") +
+  scale_x_discrete(labels=c("functional", "lexical")) +
+  scale_color_discrete(name = "fragment type", 
+                       labels = c("functional", "lexical")) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20))+
+  guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_errorbar(aes(ymin = as.numeric(response) - ci, 
                     ymax = as.numeric(response) + ci), width = 0.1) +
-  ylim(1, 8) +
-  facet_grid(fragment_type ~ modality) 
+  ylim(1,7) +
+  facet_grid(emphasis ~ modality) 
 
 
 
@@ -210,7 +265,7 @@ dat$responses_z <- responses_z
 # as by this method:
 modelemp <- lmer(data = dat, responses_z ~ emphasis + (1|submission_id))
 summary(modelemp)
-# p value = 0.0.00951
+# p value = 0.0.00709
 # We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 
 # Second hypothesis
@@ -220,7 +275,7 @@ summary(modelemp)
 # as by this method:
 modelmod <- lmer(data=dat, responses_z ~ modality + (1|submission_id))
 summary(modelmod)
-# p value = 0.00168
+# p value = 0.00202
 # We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
 
 # Third hypothesis
@@ -230,7 +285,7 @@ summary(modelmod)
 # as by this method:
 modelfrag <- lmer(data=dat, responses_z ~ fragment_type + (1|submission_id))
 summary(modelfrag)
-# p value = 0.00122
+# p value = 0.00178
 # We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
 
 
