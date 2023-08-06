@@ -53,7 +53,7 @@ nrow(all.dat)
 # participants' comments on study
 all.dat %>% pull(comments) %>% unique()
 
-# data sorting and cleaning
+# -------------------- Data sorting and cleaning --------------------
 
 # put all filler items in a separate data set
 fillerDat <- all.dat[all.dat$trial_type == "Filler",]
@@ -63,8 +63,13 @@ colnames(fillerDat)[colnames(fillerDat) == "fragmentType_Acceptability"] = "acce
 
 # only use critical items for analysis
 dat <- all.dat[all.dat$trial_type == "Critical",]
+
 # rename column with fragment type 
 colnames(dat)[colnames(dat) == "fragmentType_Acceptability"] = "fragment_type"
+
+# write out abbreviations
+dat <- dat %>%
+  mutate(fragment_type = recode(fragment_type, "L" = "lexical", "F" = "functional"))
 
 nrow(dat) == nrow(fillerDat)
 # TRUE
@@ -107,8 +112,7 @@ dat %>%
   labs(title = "Perceived naturalness of functional and lexical fragments",
     x = "fragment type", y = "perceived naturalness") +
   scale_x_discrete(labels=c("functional", "lexical")) +
-  scale_color_discrete(name = "fragment type", 
-                       labels = c("functional", "lexical"))+
+  scale_color_discrete(name = "fragment type")+
   scale_y_continuous(breaks=c(1:7))
 
 # modality and emphasis in one graph
@@ -153,8 +157,7 @@ dat %>%
   labs(title = "Auditory and written stimuli with functional and lexical fragments",
     x = "fragment type", y = "perceived naturalness", color = "fragment type") +
   scale_x_discrete(labels=c("functional", "lexical")) +
-  scale_color_discrete(name = "fragment type", 
-                    labels = c("functional", "lexical")) +
+  scale_color_discrete(name = "fragment type") +
   facet_grid(~modality) +
   scale_y_continuous(breaks=c(1:7))
 
@@ -170,9 +173,6 @@ dat %>%
   labs(title = "Participants' ratings of all critical items",
        x = "fragment type", y = "perceived naturalness", 
        color = "fragment type") +
-  scale_x_discrete(labels=c("functional", "lexical")) +
-  scale_color_discrete(name = "fragment type", 
-                       labels = c("functional", "lexical")) +
   facet_grid(emphasis~modality) +
   scale_y_continuous(breaks=c(1:7))
 
@@ -257,62 +257,28 @@ sumStats %>%
 responses_z <- scale(as.numeric(dat$response))
 dat$responses_z <- responses_z
 
-# First hypothesis
-# H0: There is no significant difference between stimuli with and without emphasis.
-# H1: Stimuli with emphasis receive higher acceptability ratings than stimuli without emphasis.
-# tested by linear mixed model
-# as by this method:
-modelemp <- lmer(data = dat, responses_z ~ emphasis + (1|submission_id))
-summary(modelemp)
-# p value = 0.0.00709
-# We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
-
-# Second hypothesis
-# H0: There is no significant difference between auditory and written stimuli.
-# H1: Auditory stimuli receive higher acceptability ratings than written stimuli.
-# tested by linear mixed model
-# as by this method:
-modelmod <- lmer(data=dat, responses_z ~ modality + (1|submission_id))
-summary(modelmod)
-# p value = 0.00202
-# We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
-
-# Third hypothesis
-# H0: There is no significant difference between stimuli with lexical and functional fragments.
-# H1: Stimuli with lexical fragments receive higher acceptability ratings than stimuli with functional fragments
-# tested by linear mixed model
-# as by this method:
-modelfrag <- lmer(data=dat, responses_z ~ fragment_type + (1|submission_id))
-summary(modelfrag)
-# p value = 0.00178
-# We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
-
-dat_all = lmer(data=dat, responses_z ~ fragment_type + modality + emphasis + (1|submission_id))
-summary(dat_all)
-
-
-# --------------- CLMM
+# CLMM
 
 mosaicplot(dat$response ~ dat$emphasis, xlab = "perceived naturalness", ylab = "emphasis", color = TRUE)
-emp.clmm = clmm(as.factor(response) ~ emphasis + (1|submission_id), data = dat)
+emp.clmm = clmm(as.factor(responses_z) ~ emphasis + (1|submission_id) + (1|trial_number), data = dat)
 summary(emp.clmm)
 AIC(emp.clmm)
 # 2862
 
 mosaicplot(dat$response ~ dat$modality, xlab = "perceived naturalness", ylab = "modality", color = TRUE)
-mod.clmm = clmm(as.factor(response) ~ modality + (1|submission_id), data = dat)
+mod.clmm = clmm(as.factor(responses_z) ~ modality + (1|submission_id) + (1|trial_number), data = dat)
 summary(mod.clmm)
 AIC(mod.clmm)
 # 2860
 
 mosaicplot(dat$response ~ dat$fragment_type, xlab = "perceived naturalness", ylab = "fragment type", color = TRUE)
-frag.clmm = clmm(as.factor(response) ~ fragment_type + (1|submission_id), data = dat)
+frag.clmm = clmm(as.factor(responses_z) ~ fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(frag.clmm)
 AIC(frag.clmm)
 # 2853
 
 # model with all predictors
-all.clmm = clmm(as.factor(response) ~ emphasis + modality + fragment_type + (1|submission_id), data = dat)
+all.clmm = clmm(as.factor(response) ~ emphasis + modality + fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(all.clmm)
 AIC(all.clmm)
 # 2847 
