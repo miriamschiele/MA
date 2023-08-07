@@ -74,6 +74,13 @@ nrow(dat) == nrow(fillerDat)
 
 # emphasis
 dat %>% 
+  group_by(emphasis) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
+
+dat %>% 
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) +
   geom_jitter(height = 0) + 
   theme(axis.text=element_text(size=16),
@@ -86,6 +93,13 @@ dat %>%
 
 # modality
 dat %>% 
+  group_by(modality) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
+
+dat %>% 
   ggplot(aes(x = modality, y = as.numeric(response), color = modality)) +
   geom_jitter(height = 0) + 
   theme(axis.text=element_text(size=16),
@@ -97,6 +111,13 @@ dat %>%
   scale_y_continuous(breaks=c(1:7))
 
 # fragment type
+dat %>% 
+  group_by(fragment_type) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
+
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
@@ -230,7 +251,6 @@ combined_plots <- mosaic.emp + mosaic.mod + mosaic.frag +
 print(combined_plots)
 
 
-
 # -------------------- Hypotheses testing --------------------
 
 # z-score the responses
@@ -245,9 +265,9 @@ dat$responses_z <- responses_z
 # tested by linear mixed model
 # as by this method:
 emp.clmm = clmm(as.factor(response) ~ emphasis + (1|submission_id) + (1|trial_number), data = dat)
+# We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 summary(emp.clmm)
 # p-value = 0.0268
-# We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 AIC(emp.clmm)
 # 2853
 
@@ -258,8 +278,8 @@ AIC(emp.clmm)
 # as by this method:
 mod.clmm = clmm(as.factor(response) ~ modality + (1|submission_id) + (1|trial_number), data = dat)
 summary(mod.clmm)
-# p-value = 0.0158
 # We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
+# p-value = 0.0158
 AIC(mod.clmm)
 # 2852
 
@@ -270,8 +290,8 @@ AIC(mod.clmm)
 # as by this method:
 frag.clmm = clmm(as.factor(response) ~ fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(frag.clmm)
-# p-value = 9.6e-05
 # We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
+# p-value = 9.6e-05
 AIC(frag.clmm)
 # 2843
 
