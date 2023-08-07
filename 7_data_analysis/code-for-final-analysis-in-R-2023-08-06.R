@@ -6,6 +6,8 @@ library("Rmisc")
 library("lme4")
 library("dplyr")
 library("ordinal")
+library("ggmosaic")
+library("patchwork")
 
 # read in data
 all.dat <- read.csv("full_dataset_raw.csv", sep=";", header=TRUE) 
@@ -109,52 +111,6 @@ dat %>%
   scale_color_discrete(name = "fragment type")+
   scale_y_continuous(breaks=c(1:7))
 
-# modality and emphasis in one graph
-dat %>% 
-  ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) +
-  geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
-  labs(title = "Auditory and written stimuli with and without emphasis",
-       x = "emphasis", y = "perceived naturalness") +
-  facet_wrap(~modality) +
-  scale_y_continuous(breaks=c(1:7))
-
-# emphasis and fragment type in one graph
-dat %>% 
-  ggplot(aes(x = fragment_type, y = as.numeric(response), 
-             color = fragment_type)) +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
-  geom_jitter(height = 0) + 
-  labs(title = "Functional and lexical fragments with and without emphasis",
-    x = "fragment type", y = "perceived naturalness", color = "fragment type") +
-  scale_x_discrete(labels=c("functional", "lexical")) +
-  scale_color_discrete(name = "fragment type", 
-                       labels = c("functional", "lexical")) +
-  facet_grid(~emphasis) +
-  scale_y_continuous(breaks=c(1:7))
-
-# modality and fragment type in one graph
-dat %>% 
-  ggplot(aes(x = fragment_type, y = as.numeric(response), 
-             color = fragment_type)) +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
-  geom_jitter(height = 0) + 
-  labs(title = "Auditory and written stimuli with functional and lexical fragments",
-    x = "fragment type", y = "perceived naturalness", color = "fragment type") +
-  scale_x_discrete(labels=c("functional", "lexical")) +
-  scale_color_discrete(name = "fragment type") +
-  facet_grid(~modality) +
-  scale_y_continuous(breaks=c(1:7))
-
 # all factors in one graph
 dat %>% 
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
@@ -169,7 +125,6 @@ dat %>%
        color = "fragment type") +
   facet_grid(emphasis~modality) +
   scale_y_continuous(breaks=c(1:7))
-
 
 # including means and standard deviation
 
@@ -231,7 +186,8 @@ sumStats %>%
         plot.title = element_text(size = 20))+
   guides(color = guide_legend(override.aes = list(size = 10))) +
   geom_point() +
-  labs(y="percevied naturalness", x="fragment type") +
+  labs(y="percevied naturalness", x="fragment type",
+       title = "Participants' ratings of all critical items") +
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
@@ -243,6 +199,36 @@ sumStats %>%
                     ymax = as.numeric(response) + ci), width = 0.1) +
   ylim(1,7) +
   facet_grid(emphasis ~ modality) 
+
+# mosaicplots
+
+mosaic.emp <- dat %>%
+  ggplot () +
+  geom_mosaic(aes(x = product(response), fill = emphasis)) +
+  labs(y="emphasis", x="perceived naturalness") +
+  theme_mosaic()
+
+mosaic.mod <- dat %>%
+  ggplot () +
+  geom_mosaic(aes(x = product(response), fill = modality)) +
+  labs(y="modality", x="perceived naturalness") +
+  theme_mosaic()
+
+mosaic.frag <- dat %>%
+  ggplot () +
+  geom_mosaic(aes(x = product(response), fill = fragment_type)) +
+  labs(y="fragment type", x="perceived naturalness", fill = "fragment type") +
+  theme_mosaic()
+
+combined_plots <- mosaic.emp + mosaic.mod + mosaic.frag +
+  plot_layout(ncol = 1) +
+  plot_annotation(title = "Participants' ratings shown for each factor",
+                  theme = theme(axis.text = element_text(size = 16),
+                                axis.title = element_text(size = 16),
+                                title = element_text(size = 20)))
+
+print(combined_plots)
+
 
 
 # -------------------- Hypotheses testing --------------------
@@ -258,7 +244,6 @@ dat$responses_z <- responses_z
 # H1: Stimuli with emphasis receive higher acceptability ratings than stimuli without emphasis.
 # tested by linear mixed model
 # as by this method:
-mosaicplot(dat$response ~ dat$emphasis, xlab = "perceived naturalness", ylab = "emphasis", color = TRUE)
 emp.clmm = clmm(as.factor(response) ~ emphasis + (1|submission_id) + (1|trial_number), data = dat)
 summary(emp.clmm)
 # p-value = 0.0268
@@ -271,7 +256,6 @@ AIC(emp.clmm)
 # H1: Auditory stimuli receive higher acceptability ratings than written stimuli.
 # tested by linear mixed model
 # as by this method:
-mosaicplot(dat$response ~ dat$modality, xlab = "perceived naturalness", ylab = "modality", color = TRUE)
 mod.clmm = clmm(as.factor(response) ~ modality + (1|submission_id) + (1|trial_number), data = dat)
 summary(mod.clmm)
 # p-value = 0.0158
@@ -284,7 +268,6 @@ AIC(mod.clmm)
 # H1: Stimuli with lexical fragments receive higher acceptability ratings than stimuli with functional fragments
 # tested by linear mixed model
 # as by this method:
-mosaicplot(dat$response ~ dat$fragment_type, xlab = "perceived naturalness", ylab = "fragment type", color = TRUE)
 frag.clmm = clmm(as.factor(response) ~ fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(frag.clmm)
 # p-value = 9.6e-05
