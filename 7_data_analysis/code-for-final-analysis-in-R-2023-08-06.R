@@ -1,16 +1,10 @@
 # code for data analysis of study on fragments
 
 # set up
-library("tidyverse")
-library("tidyr")
 library("ggplot2")
 library("Rmisc")
 library("lme4")
-library("lmerTest")
-library("emmeans")
 library("dplyr")
-library("pwr")
-library("aida")
 library("ordinal")
 
 # read in data
@@ -259,69 +253,67 @@ dat$responses_z <- responses_z
 
 # CLMM
 
+# First hypothesis
+# H0: There is no significant difference between stimuli with and without emphasis.
+# H1: Stimuli with emphasis receive higher acceptability ratings than stimuli without emphasis.
+# tested by linear mixed model
+# as by this method:
 mosaicplot(dat$response ~ dat$emphasis, xlab = "perceived naturalness", ylab = "emphasis", color = TRUE)
-emp.clmm = clmm(as.factor(responses_z) ~ emphasis + (1|submission_id) + (1|trial_number), data = dat)
+emp.clmm = clmm(as.factor(response) ~ emphasis + (1|submission_id) + (1|trial_number), data = dat)
 summary(emp.clmm)
+# p-value = 0.0268
+# We judge there to be evidence in favor of the first hypothesis, if the p-value is less than 0,05.
 AIC(emp.clmm)
-# 2862
-
-mosaicplot(dat$response ~ dat$modality, xlab = "perceived naturalness", ylab = "modality", color = TRUE)
-mod.clmm = clmm(as.factor(responses_z) ~ modality + (1|submission_id) + (1|trial_number), data = dat)
-summary(mod.clmm)
-AIC(mod.clmm)
-# 2860
-
-mosaicplot(dat$response ~ dat$fragment_type, xlab = "perceived naturalness", ylab = "fragment type", color = TRUE)
-frag.clmm = clmm(as.factor(responses_z) ~ fragment_type + (1|submission_id) + (1|trial_number), data = dat)
-summary(frag.clmm)
-AIC(frag.clmm)
 # 2853
+
+# Second hypothesis
+# H0: There is no significant difference between auditory and written stimuli.
+# H1: Auditory stimuli receive higher acceptability ratings than written stimuli.
+# tested by linear mixed model
+# as by this method:
+mosaicplot(dat$response ~ dat$modality, xlab = "perceived naturalness", ylab = "modality", color = TRUE)
+mod.clmm = clmm(as.factor(response) ~ modality + (1|submission_id) + (1|trial_number), data = dat)
+summary(mod.clmm)
+# p-value = 0.0158
+# We judge there to be evidence in favor of the second hypothesis, if the p-value is less than 0,05.
+AIC(mod.clmm)
+# 2852
+
+# Third hypothesis
+# H0: There is no significant difference between stimuli with lexical and functional fragments.
+# H1: Stimuli with lexical fragments receive higher acceptability ratings than stimuli with functional fragments
+# tested by linear mixed model
+# as by this method:
+mosaicplot(dat$response ~ dat$fragment_type, xlab = "perceived naturalness", ylab = "fragment type", color = TRUE)
+frag.clmm = clmm(as.factor(response) ~ fragment_type + (1|submission_id) + (1|trial_number), data = dat)
+summary(frag.clmm)
+# p-value = 9.6e-05
+# We judge there to be evidence in favor of the third hypothesis, if the p-value is less than 0,05.
+AIC(frag.clmm)
+# 2843
 
 # model with all predictors
 all.clmm = clmm(as.factor(response) ~ emphasis + modality + fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(all.clmm)
+# p-value = 9.02e-05
 AIC(all.clmm)
-# 2847 
+# 2836
 
-# Model fit: Likelihood Ratio Test (compare with null model) 
+
+# -------------------- Model testing --------------------
+
+# Model fit: Likelihood Ratio Test (compared to null model) 
+# model with only the submission_id as predictor
 null_model = clmm(as.factor(response) ~ 1 + (1|submission_id), data = dat)
 summary(null_model)
 AIC(null_model)
 # 2864
-# das null model ist im prinzip ein model, dass nur einen random factor nimmt und 
-# alle anderen predictor 'nicht existieren', d.h. so würde das Model ohne predictor aussehen (lediglich submission_id) 
+# AIC of null model is higher
 
-anova(null_model, all.clmm) # tested ob Unterschied significant ist 
-# ja, 3.018e-05 *** 
+# testing whether the difference is significant
+anova(null_model, all.clmm) 
+# p-value = 2.445e-07
+# yes, it is significant 
 AIC(all.clmm)-AIC(null_model)
-# AIC geht aber nur um 17 Punkte runter 
-# -> es könnte also einen Effekt geben, der nicht in dem Model auftaucht, bzw.  Predictor sind eher schwach signifikant (außer fragment_type)
-
-
-
-# ------ Zusatz 
-# adding predictors (das kannst du im Prinzip auslassen, weil alle bei alpha 0.05 significant sind)
-dat1.clmm = clmm(as.factor(response) ~ emphasis + modality + (1|submission_id), data = dat)
-summary(dat1.clmm)
-AIC(dat1.clmm)
-# 2858 
-
-dat2.clmm = clmm(as.factor(response) ~ emphasis + fragment_type + (1|submission_id), data = dat)
-summary(dat2.clmm)
-AIC(dat2.clmm)
-# 2852 
-
-dat3.clmm = clmm(as.factor(response) ~ modality + fragment_type + (1|submission_id), data = dat)
-summary(dat3.clmm)
-AIC(dat3.clmm)
-# 2849 
-# die ganzen Steps davor muss man nicht machen, ich wollte dir damit nur zeigen, 
-# dass sich der AIC nur leicht verändert und der Unterschied zwischen model mit 
-# allen predictor nur slightly besser ist als das model mit modality + fragment_type (siehe unten)
-
-# du kannst natürlich alle drei predictor behalten oder gucken wie es ohne emphasis aussieht 
-anova(all.clmm, dat3.clmm) 
-# Unterschied zwischen den beiden ist nur schwach signifikant 0.03683 * 
-anova(dat3.clmm, null_model)
-#  6.611e-05 ***, stark signifikant zu null model -> musst du wissen, ob emphasis für dich ein significanter predictor ist 
-
+# -28
+# There might be an effect that does not appear in the model, or predictors are rather weakly significant (except fragment_type)
