@@ -178,6 +178,7 @@ sumStatsMod %>%
                     ymax = as.numeric(response)+ci), width = 0.1)+
   ylim(1,7)
 
+
 # fragment type
 sumStatsFrag <- summarySE(dat, measurevar ="response", groupvars = "fragment_type")
 sumStatsFrag %>%
