@@ -72,6 +72,36 @@ nrow(dat) == nrow(fillerDat)
 
 # -------------------- Data plotting --------------------
 
+# participants' age
+dat <- dat %>%
+  mutate(age_group = ifelse(age < 50, "<50", "50+"))
+
+# write out abbreviations
+dat <- dat %>%
+  mutate(age_group = replace(age_group, is.na(age_group), "no age provided"))
+
+dat <- dat %>%
+  arrange(rev(age_group))
+
+dat %>% 
+  ggplot(aes(x = age_group, y = as.numeric(response), color = age_group)) +
+  geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20)) +
+  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Perceived naturalness by age group",
+       x = "age group", y = "perceived naturalness") +
+  scale_color_discrete(name = "age group")+
+  scale_y_continuous(breaks=c(1:7)) 
+
+dat %>% 
+  group_by(age_group) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
+
 # emphasis
 dat %>% 
   group_by(emphasis) %>% 
