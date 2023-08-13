@@ -49,6 +49,7 @@ nrow(all.dat)
 # participants' comments on study
 all.dat %>% pull(comments) %>% unique()
 
+
 # -------------------- Data sorting and cleaning --------------------
 
 # put all filler items in a separate data set
@@ -70,37 +71,8 @@ dat <- dat %>%
 nrow(dat) == nrow(fillerDat)
 # TRUE
 
+
 # -------------------- Data plotting --------------------
-
-# participants' age
-dat <- dat %>%
-  mutate(age_group = ifelse(age < 50, "<50", "50+"))
-
-# write out abbreviations
-dat <- dat %>%
-  mutate(age_group = replace(age_group, is.na(age_group), "no age provided"))
-
-dat <- dat %>%
-  arrange(rev(age_group))
-
-dat %>% 
-  ggplot(aes(x = age_group, y = as.numeric(response), color = age_group)) +
-  geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20)) +
-  guides(color = guide_legend(override.aes = list(size = 10))) +
-  labs(title = "Perceived naturalness by age group",
-       x = "age group", y = "perceived naturalness") +
-  scale_color_discrete(name = "age group")+
-  scale_y_continuous(breaks=c(1:7)) 
-
-dat %>% 
-  group_by(age_group) %>% 
-  summarize(
-    mean = mean(as.numeric(response)),
-    SD = sd(as.numeric(response))
-  )
 
 # emphasis
 dat %>% 
@@ -351,3 +323,37 @@ anova(null_model, all.clmm)
 AIC(all.clmm)-AIC(null_model)
 # -28
 # There might be an effect that does not appear in the model, or predictors are rather weakly significant (except fragment_type)
+
+
+# -------------------- Further analysis for discussion section --------------------
+
+# participants' age
+dat <- dat %>%
+  mutate(age_group = case_when(
+    is.na(age) ~ "no age provided",
+    age < 30 ~ "<30",
+    age >= 30 & age <= 49 ~ "30-49",
+    age >= 50 ~ "50+"
+  ))
+
+dat <- dat %>%
+  arrange(rev(age_group))
+
+dat %>% 
+  ggplot(aes(x = age_group, y = as.numeric(response), color = age_group)) +
+  geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20)) +
+  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Perceived naturalness by age group",
+       x = "age group", y = "perceived naturalness") +
+  scale_color_discrete(name = "age group")+
+  scale_y_continuous(breaks=c(1:7)) 
+
+dat %>% 
+  group_by(age_group) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
