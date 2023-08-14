@@ -357,3 +357,39 @@ dat %>%
     mean = mean(as.numeric(response)),
     SD = sd(as.numeric(response))
   )
+
+dat %>%
+  group_by(submission_id) %>%
+  summarize(age_group = first(age_group)) %>%
+  group_by(age_group) %>%
+  summarize(count = n())
+
+# participants' languages
+dat <- dat %>%
+  mutate(languages = trimws(languages),  
+         monolingual = ifelse(grepl(",", languages) | grepl(" ", languages), "bilingual", "monolingual"))
+
+dat %>% 
+  ggplot(aes(x = monolingual, y = as.numeric(response), color = monolingual)) +
+  geom_jitter(height = 0) + 
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16), 
+        plot.title = element_text(size = 20)) +
+  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Perceived naturalness by linguistic profile",
+       x = "linguistic profile", y = "perceived naturalness") +
+  scale_color_discrete(name = "linguisitc profile")+
+  scale_y_continuous(breaks=c(1:7)) 
+
+dat %>% 
+  group_by(monolingual) %>% 
+  summarize(
+    mean = mean(as.numeric(response)),
+    SD = sd(as.numeric(response))
+  )
+
+dat %>%
+  group_by(submission_id) %>%
+  summarize(linguistic_profile = first(monolingual)) %>%
+  group_by(linguistic_profile) %>%
+  summarize(count = n())
