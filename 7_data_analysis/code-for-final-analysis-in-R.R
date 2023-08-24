@@ -298,15 +298,15 @@ summary(frag.clmm)
 AIC(frag.clmm)
 # 2843
 
+
+# -------------------- Model testing --------------------
+
 # model with all predictors
 all.clmm = clmm(as.factor(response) ~ emphasis + modality + fragment_type + (1|submission_id) + (1|trial_number), data = dat)
 summary(all.clmm)
 # p-value = 9.02e-05
 AIC(all.clmm)
 # 2836
-
-
-# -------------------- Model testing --------------------
 
 # Model fit: Likelihood Ratio Test (compared to null model) 
 # model with only the submission_id as predictor
