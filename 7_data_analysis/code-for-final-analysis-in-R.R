@@ -139,10 +139,10 @@ dat %>%
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
   geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   labs(title = "Participants' ratings of all critical items",
        x = "fragment type", y = "perceived naturalness", 
        color = "fragment type") +
@@ -156,11 +156,13 @@ sumStatsEmp <- summarySE(dat, measurevar ="response", groupvars = "emphasis")
 sumStatsEmp %>%
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) + 
   geom_point() +
-  labs(y="percevied naturalness")+
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Participants' ratings of emphasis",
+       x = "emphasis", y = "perceived naturalness", 
+       color = "emphasis") +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
   ylim(1,7)
@@ -171,11 +173,13 @@ sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
 sumStatsMod %>%
   ggplot(aes(x = modality, y = as.numeric(response), color = modality)) + 
   geom_point() +
-  labs(y="percevied naturalness")+
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Participants' ratings of modality",
+       x = "modality", y = "perceived naturalness", 
+       color = "modality") +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
                     ymax = as.numeric(response)+ci), width = 0.1)+
   ylim(1,7)
@@ -186,11 +190,13 @@ sumStatsFrag <- summarySE(dat, measurevar ="response", groupvars = "fragment_typ
 sumStatsFrag %>%
   ggplot(aes(x = fragment_type, y = as.numeric(response), color = fragment_type)) + 
   geom_point() +
-  labs(x="fragment type", y="percevied naturalness")+
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  labs(title = "Participants' ratings of fragment types",
+       x = "fragment type", y = "perceived naturalness", 
+       color = "fragment type") +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
@@ -203,22 +209,19 @@ sumStats <- summarySE(dat, measurevar ="response",
                       groupvars = c("emphasis", "modality", "fragment_type"))
 sumStats$ci <- sumStatsMod$ci 
 #choosing one of the ci columns to ensure consistency when specifying ymin and ymax
+options(repr.plot.width=10, repr.plot.height=6)
 sumStats %>%
   ggplot(aes(x= fragment_type, y = as.numeric(response))) +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
-  geom_point() +
+  geom_point(size= 2) +
   labs(y="percevied naturalness", x="fragment type",
        title = "Participants' ratings of all critical items") +
   scale_x_discrete(labels=c("functional", "lexical")) +
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 30))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   geom_errorbar(aes(ymin = as.numeric(response) - ci, 
                     ymax = as.numeric(response) + ci), width = 0.1) +
   ylim(1,7) +
@@ -244,14 +247,12 @@ mosaic.frag <- dat %>%
   labs(y="fragment type", x="perceived naturalness", fill = "fragment type") +
   theme_mosaic()
 
-combined_plots <- mosaic.emp + mosaic.mod + mosaic.frag +
+mosaic.emp + mosaic.mod + mosaic.frag +
   plot_layout(ncol = 1) +
   plot_annotation(title = "Participants' ratings shown for each factor",
-                  theme = theme(axis.text = element_text(size = 16),
-                                axis.title = element_text(size = 16),
+                  theme = theme(axis.text = element_text(size = 25),
+                                axis.title = element_text(size = 25),
                                 title = element_text(size = 20)))
-
-print(combined_plots)
 
 
 # -------------------- Hypotheses testing --------------------
