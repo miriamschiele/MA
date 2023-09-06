@@ -343,10 +343,10 @@ dat <- dat %>%
 dat %>% 
   ggplot(aes(x = age_group, y = as.numeric(response), color = age_group)) +
   geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20)) +
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   labs(title = "Perceived naturalness by age group",
        x = "age group", y = "perceived naturalness") +
   scale_color_discrete(name = "age group")+
@@ -373,10 +373,10 @@ dat <- dat %>%
 dat %>% 
   ggplot(aes(x = monolingual, y = as.numeric(response), color = monolingual)) +
   geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20)) +
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   labs(title = "Perceived naturalness by linguistic profile",
        x = "linguistic profile", y = "perceived naturalness") +
   scale_color_discrete(name = "linguisitc profile")+
