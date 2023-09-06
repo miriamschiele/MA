@@ -124,10 +124,10 @@ dat %>%
   ggplot(aes(x = fragment_type, y = as.numeric(response), 
              color = fragment_type)) +
   geom_jitter(height = 0) + 
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16), 
-        plot.title = element_text(size = 20))+
-  guides(color = guide_legend(override.aes = list(size = 10))) +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
   labs(title = "Perceived naturalness of functional and lexical fragments",
     x = "fragment type", y = "perceived naturalness") +
   scale_x_discrete(labels=c("functional", "lexical")) +
@@ -141,13 +141,19 @@ dat %>%
   geom_jitter(height = 0) + 
   theme(axis.text=element_text(size=25),
         axis.title=element_text(size=25), 
-        plot.title = element_text(size = 32))+
+        plot.title = element_text(size = 32),
+        legend.text = element_text(size = 25),     
+        legend.title = element_text(size = 20),
+        strip.text.x = element_text(size=25),
+        strip.text.y = element_text(size=25))+
   guides(color = guide_legend(override.aes = list(size = 20))) +
   labs(title = "Participants' ratings of all critical items",
        x = "fragment type", y = "perceived naturalness", 
        color = "fragment type") +
-  facet_grid(emphasis~modality) +
-  scale_y_continuous(breaks=c(1:7))
+  facet_grid(emphasis~modality, labeller = labeller(emphasis = c("with" = "with emphasis", "without" = "without emphasis"))) +
+  scale_y_continuous(breaks=c(1:7)) +
+  scale_x_discrete(breaks = c(""), labels = c(""))
+  
 
 # including means and standard deviation
 
@@ -155,7 +161,7 @@ dat %>%
 sumStatsEmp <- summarySE(dat, measurevar ="response", groupvars = "emphasis")
 sumStatsEmp %>%
   ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) + 
-  geom_point() +
+  geom_point(size= 5) +
   labs(title = "Participants' ratings of emphasis",
        x = "emphasis", y = "perceived naturalness", 
        color = "emphasis") +
@@ -164,15 +170,31 @@ sumStatsEmp %>%
         plot.title = element_text(size = 32))+
   guides(color = guide_legend(override.aes = list(size = 20))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
-                    ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,7)
+                    ymax = as.numeric(response)+ci), width = 0.7)+
+  scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
+
+# emphasis
+sumStatsEmp <- summarySE(dat, measurevar ="response", groupvars = "emphasis")
+sumStatsEmp %>%
+  ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) + 
+  geom_point(size= 5) +
+  labs(title = "Participants' ratings of emphasis",
+       x = "emphasis", y = "perceived naturalness", 
+       color = "emphasis") +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
+  geom_errorbar(aes(ymin = as.numeric(response)-ci, 
+                    ymax = as.numeric(response)+ci), width = 0.7)+
+  scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
 
 
 # modality
 sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
 sumStatsMod %>%
   ggplot(aes(x = modality, y = as.numeric(response), color = modality)) + 
-  geom_point() +
+  geom_point(size=5) +
   labs(title = "Participants' ratings of modality",
        x = "modality", y = "perceived naturalness", 
        color = "modality") +
@@ -181,7 +203,24 @@ sumStatsMod %>%
         plot.title = element_text(size = 32))+
   guides(color = guide_legend(override.aes = list(size = 20))) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
-                    ymax = as.numeric(response)+ci), width = 0.1)+
+                    ymax = as.numeric(response)+ci), width = 0.7)+
+  scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
+
+
+# modality
+sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
+sumStatsMod %>%
+  ggplot(aes(x = modality, y = as.numeric(response), color = modality)) + 
+  geom_point(size=5) +
+  labs(title = "Participants' ratings of modality",
+       x = "modality", y = "perceived naturalness", 
+       color = "modality") +
+  theme(axis.text=element_text(size=25),
+        axis.title=element_text(size=25), 
+        plot.title = element_text(size = 32))+
+  guides(color = guide_legend(override.aes = list(size = 20))) +
+  geom_errorbar(aes(ymin = as.numeric(response)-ci, 
+                    ymax = as.numeric(response)+ci), width = 0.7)+
   ylim(1,7)
 
 
@@ -230,22 +269,37 @@ sumStats %>%
 # mosaicplots
 
 mosaic.emp <- dat %>%
-  ggplot () +
-  geom_mosaic(aes(x = product(response), fill = emphasis)) +
-  labs(y="emphasis", x="perceived naturalness") +
-  theme_mosaic()
+  ggplot() +
+  geom_mosaic(aes(x = product(response), fill = emphasis), offset = 0.05) +
+  labs(x = "perceived naturalness", y = "emphasis") +
+  theme_mosaic() +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_text(size = 25),
+        axis.title.x = element_text(size = 25),
+        legend.title = element_text(size = 25))+
+  scale_y_discrete(breaks = c(""), labels = c(""))
 
 mosaic.mod <- dat %>%
-  ggplot () +
-  geom_mosaic(aes(x = product(response), fill = modality)) +
-  labs(y="modality", x="perceived naturalness") +
-  theme_mosaic()
+  ggplot() +
+  geom_mosaic(aes(x = product(response), fill = modality), offset =0.05) +
+  labs(x = "perceived naturalness", y = "modality") +
+  theme_mosaic() +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_text(size = 25),
+        axis.title.x = element_text(size = 25),
+        legend.title = element_text(size = 25))+
+  scale_y_discrete(breaks = c(""), labels = c(""))
 
 mosaic.frag <- dat %>%
-  ggplot () +
-  geom_mosaic(aes(x = product(response), fill = fragment_type)) +
-  labs(y="fragment type", x="perceived naturalness", fill = "fragment type") +
-  theme_mosaic()
+  ggplot() +
+  geom_mosaic(aes(x = product(response), fill = fragment_type), offset =0.05) +
+  labs(x = "perceived naturalness", y = "fragment type", fill = "fragment type") +
+  theme_mosaic() +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_text(size = 25),
+        axis.title.x = element_text(size = 25),
+        legend.title = element_text(size = 25))+
+  scale_y_discrete(breaks = c(""), labels = c(""))
 
 mosaic.emp + mosaic.mod + mosaic.frag +
   plot_layout(ncol = 1) +
