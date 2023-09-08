@@ -173,22 +173,6 @@ sumStatsEmp %>%
                     ymax = as.numeric(response)+ci), width = 0.7)+
   scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
 
-# emphasis
-sumStatsEmp <- summarySE(dat, measurevar ="response", groupvars = "emphasis")
-sumStatsEmp %>%
-  ggplot(aes(x = emphasis, y = as.numeric(response), color = emphasis)) + 
-  geom_point(size= 5) +
-  labs(title = "Participants' ratings of emphasis",
-       x = "emphasis", y = "perceived naturalness", 
-       color = "emphasis") +
-  theme(axis.text=element_text(size=25),
-        axis.title=element_text(size=25), 
-        plot.title = element_text(size = 32))+
-  guides(color = guide_legend(override.aes = list(size = 20))) +
-  geom_errorbar(aes(ymin = as.numeric(response)-ci, 
-                    ymax = as.numeric(response)+ci), width = 0.7)+
-  scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
-
 
 # modality
 sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
