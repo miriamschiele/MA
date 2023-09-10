@@ -7,7 +7,6 @@ library("lme4")
 library("dplyr")
 library("ordinal")
 library("ggmosaic")
-library("patchwork")
 
 # read in data
 all.dat <- read.csv("full_dataset_raw.csv", sep=";", header=TRUE) 
@@ -191,28 +190,11 @@ sumStatsMod %>%
   scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
 
 
-# modality
-sumStatsMod <- summarySE(dat, measurevar ="response", groupvars = "modality")
-sumStatsMod %>%
-  ggplot(aes(x = modality, y = as.numeric(response), color = modality)) + 
-  geom_point(size=5) +
-  labs(title = "Participants' ratings of modality",
-       x = "modality", y = "perceived naturalness", 
-       color = "modality") +
-  theme(axis.text=element_text(size=25),
-        axis.title=element_text(size=25), 
-        plot.title = element_text(size = 32))+
-  guides(color = guide_legend(override.aes = list(size = 20))) +
-  geom_errorbar(aes(ymin = as.numeric(response)-ci, 
-                    ymax = as.numeric(response)+ci), width = 0.7)+
-  ylim(1,7)
-
-
 # fragment type
 sumStatsFrag <- summarySE(dat, measurevar ="response", groupvars = "fragment_type")
 sumStatsFrag %>%
   ggplot(aes(x = fragment_type, y = as.numeric(response), color = fragment_type)) + 
-  geom_point() +
+  geom_point(size=5) +
   labs(title = "Participants' ratings of fragment types",
        x = "fragment type", y = "perceived naturalness", 
        color = "fragment type") +
@@ -224,8 +206,8 @@ sumStatsFrag %>%
   scale_color_discrete(name = "fragment type", 
                        labels = c("functional", "lexical")) +
   geom_errorbar(aes(ymin = as.numeric(response)-ci, 
-                    ymax = as.numeric(response)+ci), width = 0.1)+
-  ylim(1,7)
+                    ymax = as.numeric(response)+ci), width = 0.7)+
+  scale_y_continuous(breaks = seq(1, 7, by = 0.5), limit = c(1,7))
 
 # all factors included
 sumStats <- summarySE(dat, measurevar ="response", 
@@ -337,7 +319,6 @@ summary(frag.clmm)
 AIC(frag.clmm)
 # 2843
 
-
 # -------------------- Model testing --------------------
 
 # model with all predictors
@@ -362,7 +343,6 @@ anova(null_model, all.clmm)
 AIC(all.clmm)-AIC(null_model)
 # -28
 # There might be an effect that does not appear in the model, or predictors are rather weakly significant (except fragment_type)
-
 
 # -------------------- Further analysis for discussion section --------------------
 
