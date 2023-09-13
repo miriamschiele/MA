@@ -22,10 +22,6 @@
   "dependencies": {
     "magpie-base": "^3.5.0"
   },
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=7.0.0"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
