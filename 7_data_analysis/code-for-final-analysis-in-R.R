@@ -337,12 +337,16 @@ AIC(null_model)
 # AIC of null model is higher
 
 # testing whether the difference is significant
-anova(null_model, all.clmm) 
+anova_result <- anova(null_model, all.clmm) 
 # p-value = 2.445e-07
 # yes, it is significant 
 AIC(all.clmm)-AIC(null_model)
 # -28
 # There might be an effect that does not appear in the model, or predictors are rather weakly significant (except fragment_type)
+
+#f statistic
+anova_result$Chisq["Model", "Pr(>Chisq)"]
+
 
 # -------------------- Further analysis for discussion section --------------------
 
